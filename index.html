@@ -1,59 +1,227 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-.navbar {
-  overflow: hidden;
-  background-color: #333;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-}
-
-.navbar a {
-  float: left;
-  display: block;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-}
-
-.navbar a:hover {
-  background: #f1f1f1;
-  color: black;
-}
-
-.navbar a.active {
-  background-color: #04AA6D;
-  color: white;
-}
-
-.main {
-  padding: 16px;
-  margin-bottom: 30px;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Management System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        nav {
+            background-color: #333;
+            color: white;
+            padding: 15px;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            margin: 20px auto;
+        }
+        .tabs {
+            display: flex;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+        .tab {
+            padding: 10px 20px;
+            background: #ddd;
+            margin-right: 5px;
+            border-radius: 5px 5px 0 0;
+        }
+        .tab.active {
+            background: #fff;
+            border-bottom: 2px solid blue;
+        }
+        .tab-content {
+            border: 1px solid #ddd;
+            border-radius: 0 0 5px 5px;
+            padding: 20px;
+            background: #fff;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .error {
+            color: red;
+            font-size: 12px;
+        }
+        .btn {
+            padding: 10px 15px;
+            margin-right: 10px;
+            cursor: pointer;
+            border: none;
+            border-radius: 4px;
+        }
+        .btn-primary {
+            background-color: blue;
+            color: white;
+        }
+        .btn-secondary {
+            background-color: gray;
+            color: white;
+        }
+        .readonly {
+            background-color: #f5f5f5;
+            border: 1px solid #ccc;
+        }
+    </style>
 </head>
 <body>
 
-<div class="navbar">
-  <a href="#home" class="active">Home</a>
-  <a href="#news">News</a>
-  <a href="#contact">Contact</a>
-</div>
+    <nav>
+        <a href="#home" onclick="showSection('home')">Home</a>
+        <a href="#about" onclick="showSection('about')">About</a>
+        <a href="#labs" onclick="showSection('labs')">Labs</a>
+    </nav>
 
-<div class="main">
-  <h1>Bottom Navigation Bar</h1>
-  <p>Some text some text some text.</p>
-</div>
+    <div class="container" id="home">
+        <h1>Home</h1>
+        <p>Welcome to the Course Management System.</p>
+        <p>Navigate through the sections:</p>
+        <ul>
+            <li><strong>About:</strong> Information about the system.</li>
+            <li><strong>Labs:</strong> Hands-on labs for practical learning.</li>
+        </ul>
+    </div>
+
+    <div class="container" id="about" style="display:none;">
+        <h1>About</h1>
+        <p>This section is under construction.</p>
+    </div>
+
+    <div class="container" id="labs" style="display:none;">
+        <h1>Labs</h1>
+        <div class="tabs">
+            <div class="tab active" onclick="showLab('lab1')">Lab 1</div>
+            <div class="tab" onclick="showLab('lab2')">Lab 2</div>
+            <div class="tab" onclick="showLab('lab3')">Lab 3</div>
+            <div class="tab" onclick="showLab('lab4')">Lab 4</div>
+        </div>
+
+        <div class="tab-content" id="lab1">
+            <h2>Lab 1: Course Management</h2>
+            <form id="course-form">
+                <div class="form-group">
+                    <label for="course_id">Course ID</label>
+                    <input type="text" id="course_id" placeholder="Auto-generated" readonly class="readonly">
+                </div>
+
+                <div class="form-group">
+                    <label for="course_name">Course Name</label>
+                    <input type="text" id="course_name" placeholder="Enter course name" required maxlength="255">
+                    <div class="error" id="course_name-error"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="course_description">Course Description (optional)</label>
+                    <textarea id="course_description" placeholder="Enter course description" rows="4"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="instructor">Instructor</label>
+                    <select id="instructor" required>
+                        <option value="">Select an instructor</option>
+                        <option value="1">Instructor A</option>
+                        <option value="2">Instructor B</option>
+                        <option value="3">Instructor C</option>
+                    </select>
+                    <div class="error" id="instructor-error"></div>
+                </div>
+
+                <div class="form-group">
+                    <label>Created At</label>
+                    <div id="created_at" class="readonly">Auto-generated date</div>
+                </div>
+
+                <div class="form-group">
+                    <label>Last Updated At</label>
+                    <div id="updated_at" class="readonly">Auto-generated date</div>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Create Course</button>
+                <button type="button" class="btn btn-secondary" onclick="cancelForm()">Cancel</button>
+            </form>
+        </div>
+
+        <div class="tab-content" id="lab2" style="display:none;">
+            <h2>Lab 2</h2>
+            <p>This section is for Lab 2 content.</p>
+        </div>
+        <div class="tab-content" id="lab3" style="display:none;">
+            <h2>Lab 3</h2>
+            <p>This section is for Lab 3 content.</p>
+        </div>
+        <div class="tab-content" id="lab4" style="display:none;">
+            <h2>Lab 4</h2>
+            <p>This section is for Lab 4 content.</p>
+        </div>
+    </div>
+
+    <script>
+        function showSection(section) {
+            const sections = ['home', 'about', 'labs'];
+            sections.forEach(s => {
+                document.getElementById(s).style.display = s === section ? 'block' : 'none';
+            });
+        }
+
+        function showLab(lab) {
+            const labs = ['lab1', 'lab2', 'lab3', 'lab4'];
+            labs.forEach(l => {
+                document.getElementById(l).style.display = l === lab ? 'block' : 'none';
+            });
+
+            // Update tab active class
+            const tabs = document.querySelectorAll('.tab');
+            tabs.forEach(t => {
+                t.classList.remove('active');
+            });
+            const activeTab = Array.from(tabs).find(t => t.innerText === lab.replace('lab', 'Lab '));
+            if (activeTab) activeTab.classList.add('active');
+        }
+
+        // Handle form submission
+        document.getElementById('course-form').onsubmit = function(event) {
+            event.preventDefault();
+            // Logic to create or update the course
+            alert("Course created/updated successfully.");
+        };
+
+        // Function to reset the form
+        function cancelForm() {
+            document.getElementById('course-form').reset();
+        }
+
+        // Show the home section by default
+        showSection('home');
+    </script>
 
 </body>
 </html>
