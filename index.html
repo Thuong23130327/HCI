@@ -56,7 +56,8 @@
     <form id="course-form">
         <div class="form-group">
             <label for="course_id">Course ID</label>
-            <input type="text" id="course_id" readonly class="readonly">
+            <input type="text" id="course_id" placeholder="Enter course ID" required>
+            <div class="error" id="course_id-error"></div>
         </div>
 
         <div class="form-group">
@@ -84,12 +85,12 @@
 
         <div class="form-group">
             <label>Created At</label>
-            <div id="created_at" readonly class="readonly"></div>
+            <div id="created_at" class="readonly"></div>
         </div>
 
         <div class="form-group">
             <label>Last Updated At</label>
-            <div id="updated_at" readonly class="readonly"></div>
+            <div id="updated_at" class="readonly"></div>
         </div>
 
         <button type="submit" class="btn btn-primary" id="submit-btn">Create Course</button>
@@ -140,6 +141,7 @@
                 updatedAt: new Date().toISOString(),
             };
 
+            document.getElementById('course_id').value = courseData.id; // Allowing editing
             document.getElementById('modal_course_id').innerText = courseData.id;
             document.getElementById('modal_course_name').innerText = courseData.name;
             document.getElementById('modal_course_description').innerText = courseData.description;
@@ -182,7 +184,7 @@
         }
 
         // Simulate showing course details on page load
-        showCourseDetails(1);
+        loadCourseData("C001");  // Example course ID
     </script>
 
 </body>
