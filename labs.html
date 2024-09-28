@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        select {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        .error {
+            color: red;
+            font-size: 12px;
+        }
+        .preview {
+            margin-top: 10px;
+            max-width: 100px;
+            max-height: 100px;
+            display: none;
+        }
+        .btn {
+            padding: 10px 15px;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+        .btn-primary {
+            background-color: blue;
+            color: white;
+            border: none;
+        }
+        .btn-secondary {
+            background-color: gray;
+            color: white;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Create Account</h1>
+    <form id="account-form">
+        
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" placeholder="Enter your username." required maxlength="255">
+            <div class="error" id="username-error"></div>
+        </div>
+
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Enter your password." required maxlength="255">
+            <button type="button" onclick="togglePassword()">Show/Hide</button>
+            <div class="error" id="password-error"></div>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" placeholder="Enter your email." required maxlength="255">
+            <div class="error" id="email-error"></div>
+        </div>
+
+        <div class="form-group">
+            <label for="full-name">Full Name (optional)</label>
+            <input type="text" id="full-name" placeholder="Enter your full name." maxlength="255">
+        </div>
+
+        <div class="form-group">
+            <label for="role">Role</label>
+            <select id="role" required>
+                <option value="">Select a role</option>
+                <option value="admin">Admin</option>
+                <option value="user">User</option>
+                <!-- Add other roles here -->
+            </select>
+            <div class="error" id="role-error"></div>
+        </div>
+
+        <div class="form-group">
+            <label for="profile-picture">Profile Picture</label>
+            <input type="file" id="profile-picture" accept="image/*" onchange="previewImage(event)">
+            <input type="text" id="image-url" placeholder="Or enter image URL." maxlength="255" oninput="previewImageURL(event)">
+            <img id="image-preview" class="preview" src="#" alt="Profile Preview">
+        </div>
+
+        <div class="form-group">
+            <label>Account Created At</label>
+            <div id="created-at" readonly><?php echo date("Y-m-d H:i:s"); ?></div>
+        </div>
+
+        <div class="form-group">
+            <label>Last Updated At</label>
+            <div id="updated-at" readonly><?php echo date("Y-m-d H:i:s"); ?></div>
+        </div>
+
+        <button type="submit" class="btn btn-primary" id="submit-btn" disabled>Create Account</button>
+        <button type="button" class="btn btn-secondary" onclick="cancelForm()">Cancel</button>
+
+    </form>
+
+    <script>
+        function togglePassword() {
+            const passwordInput = document.getElementById('password');
+            const type = passwordInput.type === 'password' ? 'text' : 'password';
+            passwordInput.type = type;
+        }
+
+        function previewImage(event) {
+            const preview = document.getElementById('image-preview');
+            const file = event.target.files[0];
+            const reader = new FileReader();
+            reader.onload = function(){
+                preview.src = reader.result;
+                preview.style.display = 'block';
+            }
+            reader.readAsDataURL(file);
+        }
+
+        function previewImageURL(event) {
+            const preview = document.getElementById('image-preview');
+            preview.src = event.target.value;
+            preview.style.display = 'block';
+        }
+
+        function cancelForm() {
+            document.getElementById('account-form').reset();
+            document.getElementById('image-preview').style.display = 'none';
+        }
+
+        // Add inline validation logic here
+
+    </script>
+
+</body>
+</html>
