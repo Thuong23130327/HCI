@@ -28,7 +28,7 @@
             background: white; 
             border-radius: 8px; 
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
-            max-width: 800px; 
+            max-width: 1600px; /* Gấp đôi chiều dài */
             margin: 100px auto; /* Tăng khoảng cách từ trên xuống */
         }
         .tab { 
@@ -78,7 +78,7 @@
         .btn-primary { background-color: blue; color: white; }
         .btn-secondary { background-color: gray; color: white; }
         .login-container { 
-            max-width: 600px; 
+            max-width: 1200px; /* Gấp đôi chiều dài */
             margin: 100px auto; 
             padding: 40px; /* Tăng padding cho container đăng nhập */
             border: 1px solid #ccc; 
@@ -92,6 +92,7 @@
             border-radius: 6px; 
             margin-bottom: 20px; /* Tăng khoảng cách dưới cho thẻ bài tập */
             background-color: #f9f9f9; 
+            max-width: 600px; /* Gấp đôi chiều dài cho thẻ bài tập */
         }
         .exercise-card h3 { margin: 0; }
         .exercise-card p { margin: 10px 0; } /* Tăng khoảng cách giữa các đoạn mô tả */
@@ -101,6 +102,7 @@
             padding: 30px; /* Tăng padding cho trình soạn thảo code */
             min-height: 250px; 
             margin-bottom: 40px; /* Tăng khoảng cách dưới cho trình soạn thảo code */
+            max-width: 1200px; /* Gấp đôi chiều dài cho trình soạn thảo code */
         }
         .submit-btn { background-color: green; color: white; float: left; padding: 15px 30px; }
         .quit-btn { background-color: red; color: white; float: right; padding: 15px 30px; }
@@ -184,11 +186,11 @@
                 <form id="login-form">
                     <div class="form-group">
                         <label for="username">Username/Email</label>
-                        <input type="text" id="username" placeholder="Enter your username or email" required>
+                        <input type="text" id="username" placeholder="Enter username or email" required>
                     </div>
                     <div class="form-group">
                         <label for="password">Password</label>
-                        <input type="password" id="password" placeholder="Enter your password" required>
+                        <input type="password" id="password" placeholder="Enter password" required>
                     </div>
                     <button type="submit" class="btn btn-primary">Login</button>
                     <a href="#" style="color: blue;">Forgot Password?</a>
