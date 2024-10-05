@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thuong</title>
+    <title>Course Management System</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -34,34 +34,43 @@
             border-radius: 8px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             max-width: 800px;
-            margin: 70px auto; /* Add margin to avoid content being hidden behind the fixed nav */
+            margin: 70px auto;
         }
-        .tabs {
-            display: flex;
-            cursor: pointer;
-            margin-bottom: 20px;
+        .sidebar {
             position: fixed;
-            top: 60px; /* Position below the nav */
-            background: white;
-            width: 100%;
-            z-index: 999; /* Ensure it's above content */
-        }
-        .tab {
-            padding: 10px 20px;
+            top: 60px;
+            right: 0;
+            width: 150px;
             background: #ddd;
-            margin-right: 5px;
-            border-radius: 5px 5px 0 0;
-        }
-        .tab.active {
-            background: #fff;
-            border-bottom: 2px solid blue;
-        }
-        .tab-content {
-            border: 1px solid #ddd;
-            border-radius: 0 0 5px 5px;
             padding: 20px;
+            height: 100%;
+        }
+        .sidebar .lab {
+            display: block;
+            margin-bottom: 10px;
+            padding: 10px;
             background: #fff;
-            margin-top: 40px; /* Space for fixed tabs */
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            text-align: center;
+        }
+        .sidebar .lab:hover {
+            background: #f0f0f0;
+        }
+        .new-lab-button {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: blue;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            cursor: pointer;
         }
         .form-group {
             margin-bottom: 15px;
@@ -93,10 +102,6 @@
             background-color: blue;
             color: white;
         }
-        .btn-secondary {
-            background-color: gray;
-            color: white;
-        }
         .readonly {
             background-color: #f5f5f5;
             border: 1px solid #ccc;
@@ -114,30 +119,22 @@
     <div class="container" id="home">
         <h1>Home</h1>
         <p>Welcome to the Course Management System.</p>
-        <p>Navigate through the sections:</p>
-        <ul>
-            <li><strong>About:</strong> Information about the system.</li>
-            <li><strong>Labs:</strong> Hands-on labs for practical learning.</li>
-        </ul>
+        <p>There are 2 labs available in the Labs section.</p>
     </div>
 
     <div class="container" id="about" style="display:none;">
         <h1>About</h1>
         <h2>Nguyễn Hoài Thương - 23130327</h2>
-        <h3>DH23DTB</h3>
     </div>
 
     <div class="container" id="labs" style="display:none;">
         <h1>Labs</h1>
-        <div class="tabs">
-            <div class="tab active" onclick="showLab('lab1')">Lab 1</div>
-            <div class="tab" onclick="showLab('lab2')">Lab 2</div>
-            <div class="tab" onclick="showLab('lab3')">Lab 3</div>
-            <div class="tab" onclick="showLab('lab4')">Lab 4</div>
+        <div class="sidebar">
+            <a href="#" class="lab" onclick="showLab('lab1')">Lab 1</a>
+            <a href="#" class="lab" onclick="showLab('lab2')">Lab 2</a>
         </div>
-
         <div class="tab-content" id="lab1">
-            <h2>Lab 1: Course Management</h2>
+            <h2>Lab 1: Course Management UI</h2>
             <form id="course-form">
                 <div class="form-group">
                     <label for="course_id">Course ID</label>
@@ -180,20 +177,13 @@
                 <button type="button" class="btn btn-secondary" onclick="cancelForm()">Cancel</button>
             </form>
         </div>
-
         <div class="tab-content" id="lab2" style="display:none;">
             <h2>Lab 2</h2>
-            <p>Lab 2</p>
-        </div>
-        <div class="tab-content" id="lab3" style="display:none;">
-            <h2>Lab 3</h2>
-            <p>Lab 3</p>
-        </div>
-        <div class="tab-content" id="lab4" style="display:none;">
-            <h2>Lab 4</h2>
-            <p>Lab 4</p>
+            <p>Lab 2 details here.</p>
         </div>
     </div>
+
+    <div class="new-lab-button" onclick="createNewLab()">+</div>
 
     <script>
         function showSection(section) {
@@ -204,33 +194,25 @@
         }
 
         function showLab(lab) {
-            const labs = ['lab1', 'lab2', 'lab3', 'lab4'];
+            const labs = ['lab1', 'lab2'];
             labs.forEach(l => {
                 document.getElementById(l).style.display = l === lab ? 'block' : 'none';
             });
-
-            // Update tab active class
-            const tabs = document.querySelectorAll('.tab');
-            tabs.forEach(t => {
-                t.classList.remove('active');
-            });
-            const activeTab = Array.from(tabs).find(t => t.innerText === lab.replace('lab', 'Lab '));
-            if (activeTab) activeTab.classList.add('active');
         }
 
-        // Handle form submission
+        function createNewLab() {
+            alert("Create a new lab clicked!");
+        }
+
         document.getElementById('course-form').onsubmit = function(event) {
             event.preventDefault();
-            // Logic to create or update the course
             alert("Course created/updated successfully.");
         };
 
-        // Function to reset the form
         function cancelForm() {
             document.getElementById('course-form').reset();
         }
 
-        // Show the home section by default
         showSection('home');
     </script>
 
