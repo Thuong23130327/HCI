@@ -9,7 +9,7 @@
         nav {
             background-color: #333;
             color: white;
-            padding: 15px;
+            padding: 30px; /* Tăng padding */
             position: fixed;
             width: 100%;
             top: 0;
@@ -18,25 +18,25 @@
         }
         nav a {
             color: white;
-            margin: 0 15px;
+            margin: 0 30px; /* Tăng khoảng cách giữa các liên kết */
             text-decoration: none;
             display: inline-block; /* Ensure the links appear inline */
         }
         nav a:hover { text-decoration: underline; }
         .container { 
-            padding: 40px; /* Tăng khoảng cách bên trong */
+            padding: 80px; /* Tăng padding */
             background: white; 
             border-radius: 8px; 
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
             max-width: 800px; 
-            margin: 70px auto; /* Căn giữa và khoảng cách từ trên xuống */
+            margin: 100px auto; /* Tăng khoảng cách từ trên xuống */
         }
         .tab { 
             overflow: hidden; 
             border: 1px solid #ccc; 
             background-color: #f1f1f1; 
-            margin-top: 40px; 
-            padding: 10px; /* Thêm padding cho tab */
+            margin-top: 80px; /* Tăng khoảng cách trên */
+            padding: 20px; /* Tăng padding cho tab */
         }
         .tab button { 
             background-color: inherit; 
@@ -44,33 +44,33 @@
             border: none; 
             outline: none; 
             cursor: pointer; 
-            padding: 14px 16px; 
+            padding: 28px 32px; /* Tăng padding cho nút */
             transition: 0.3s; 
             font-size: 17px; 
-            margin: 0 5px; /* Thêm khoảng cách giữa các nút */
+            margin: 0 10px; /* Tăng khoảng cách giữa các nút */
         }
         .tab button:hover { background-color: #ddd; }
         .tab button.active { background-color: #ccc; }
         .tabcontent { 
             display: none; 
-            padding: 6px 12px; 
+            padding: 12px 24px; /* Tăng padding cho nội dung tab */
             border: 1px solid #ccc; 
             border-top: none; 
-            margin-top: 10px;
-            padding: 20px; /* Thêm padding cho nội dung tab */
+            margin-top: 20px;
+            padding: 40px; /* Tăng padding cho nội dung tab */
         }
-        .form-group { margin-bottom: 15px; }
-        label { display: block; margin-bottom: 5px; }
+        .form-group { margin-bottom: 30px; } /* Tăng khoảng cách giữa các nhóm form */
+        label { display: block; margin-bottom: 10px; } /* Tăng khoảng cách dưới nhãn */
         input[type="text"], input[type="password"], textarea, select { 
             width: 100%; 
-            padding: 10px; 
+            padding: 20px; /* Tăng padding cho ô nhập liệu */
             border: 1px solid #ccc; 
             border-radius: 4px; 
         }
         .readonly { background-color: #f5f5f5; border: 1px solid #ccc; }
         .btn { 
-            padding: 10px 15px; 
-            margin-right: 10px; 
+            padding: 20px 30px; /* Tăng padding cho nút */
+            margin-right: 20px; /* Tăng khoảng cách bên phải */
             cursor: pointer; 
             border: none; 
             border-radius: 4px; 
@@ -78,34 +78,33 @@
         .btn-primary { background-color: blue; color: white; }
         .btn-secondary { background-color: gray; color: white; }
         .login-container { 
-            max-width: 400px; 
+            max-width: 600px; 
             margin: 100px auto; 
-            padding: 20px; 
+            padding: 40px; /* Tăng padding cho container đăng nhập */
             border: 1px solid #ccc; 
             background-color: white; 
             border-radius: 8px; 
         }
-        .exercise-container { margin-top: 20px; }
+        .exercise-container { margin-top: 40px; } /* Tăng khoảng cách trên cho danh sách bài tập */
         .exercise-card { 
-            padding: 10px; 
+            padding: 20px; /* Tăng padding cho thẻ bài tập */
             border: 1px solid #ddd; 
             border-radius: 6px; 
-            margin-bottom: 10px; 
+            margin-bottom: 20px; /* Tăng khoảng cách dưới cho thẻ bài tập */
             background-color: #f9f9f9; 
-            padding: 15px; /* Thêm padding cho exercise card */
         }
         .exercise-card h3 { margin: 0; }
-        .exercise-card p { margin: 5px 0; }
+        .exercise-card p { margin: 10px 0; } /* Tăng khoảng cách giữa các đoạn mô tả */
         .code-editor { 
             border: 1px solid #ccc; 
             background-color: #f0f0f0; 
-            padding: 15px; 
-            min-height: 200px; 
-            margin-bottom: 20px; 
+            padding: 30px; /* Tăng padding cho trình soạn thảo code */
+            min-height: 250px; 
+            margin-bottom: 40px; /* Tăng khoảng cách dưới cho trình soạn thảo code */
         }
-        .submit-btn { background-color: green; color: white; float: left; }
-        .quit-btn { background-color: red; color: white; float: right; }
-        .button-container { display: flex; justify-content: space-between; }
+        .submit-btn { background-color: green; color: white; float: left; padding: 15px 30px; }
+        .quit-btn { background-color: red; color: white; float: right; padding: 15px 30px; }
+        .button-container { display: flex; justify-content: space-between; margin-top: 20px; } /* Tăng khoảng cách trên cho container nút */
     </style>
 </head>
 <body>
@@ -192,25 +191,21 @@
                         <input type="password" id="password" placeholder="Enter your password" required>
                     </div>
                     <button type="submit" class="btn btn-primary">Login</button>
-                    <a href="#" style="display:block; margin-top:10px;">Forgot Password?</a>
+                    <a href="#" style="color: blue;">Forgot Password?</a>
                 </form>
             </div>
 
-            <!-- Dashboard after login -->
+            <!-- Dashboard -->
             <div id="dashboard" style="display:none;">
                 <h2>Dashboard</h2>
-                <div class="form-group">
-                    <label for="filter">Filter by programming language</label>
-                    <select id="filter" onchange="filterExercises()">
-                        <option value="all">All</option>
-                        <option value="C">C</option>
-                        <option value="Python">Python</option>
-                        <option value="Java">Java</option>
-                    </select>
-                </div>
-
+                <select id="filter" onchange="filterExercises()">
+                    <option value="all">All Languages</option>
+                    <option value="C">C</option>
+                    <option value="Python">Python</option>
+                    <option value="Java">Java</option>
+                </select>
                 <div class="exercise-container" id="exercise-list">
-                    <!-- Sample exercises will be displayed here -->
+                    <!-- Exercises will be displayed here -->
                 </div>
             </div>
 
