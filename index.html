@@ -31,11 +31,16 @@
         .tabcontent { display: none; padding: 6px 12px; border: 1px solid #ccc; border-top: none; margin-top: 10px;}
         .form-group { margin-bottom: 15px; }
         label { display: block; margin-bottom: 5px; }
-        input[type="text"], textarea, select { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; }
+        input[type="text"], input[type="password"], textarea, select { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; }
         .readonly { background-color: #f5f5f5; border: 1px solid #ccc; }
         .btn { padding: 10px 15px; margin-right: 10px; cursor: pointer; border: none; border-radius: 4px; }
         .btn-primary { background-color: blue; color: white; }
         .btn-secondary { background-color: gray; color: white; }
+        .login-container { max-width: 400px; margin: 100px auto; padding: 20px; border: 1px solid #ccc; background-color: white; border-radius: 8px; }
+        .exercise-container { margin-top: 20px; }
+        .exercise-card { padding: 10px; border: 1px solid #ddd; border-radius: 6px; margin-bottom: 10px; background-color: #f9f9f9; }
+        .exercise-card h3 { margin: 0; }
+        .exercise-card p { margin: 5px 0; }
     </style>
 </head>
 <body>
@@ -60,11 +65,11 @@
     <div class="container" id="labs" style="display:none;">
         <h1>Labs</h1>
         <div class="tab">
-            <button class="tablinks" onclick="openLab(event, 'Lab1')">Lab 1</button>
+            <button class="tablinks active" onclick="openLab(event, 'Lab1')">Lab 1</button>
             <button class="tablinks" onclick="openLab(event, 'Lab2')">Lab 2</button>
         </div>
 
-        <div id="Lab1" class="tabcontent">
+        <div id="Lab1" class="tabcontent" style="display:block;">
             <h2>Lab 1: Course Management</h2>
             <form id="course-form">
                 <div class="form-group">
@@ -107,13 +112,53 @@
             </form>
         </div>
 
+        <!-- Lab 2: Authentication and Dashboard -->
         <div id="Lab2" class="tabcontent">
-            <h2>Lab 2</h2>
-            <p>Lab 2 content goes here.</p>
+            <!-- Login Form -->
+            <div class="login-container" id="login-container">
+                <h2>Login</h2>
+                <form id="login-form">
+                    <div class="form-group">
+                        <label for="username">Username/Email</label>
+                        <input type="text" id="username" placeholder="Enter your username or email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" placeholder="Enter your password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Login</button>
+                    <a href="#" style="display:block; margin-top:10px;">Forgot Password?</a>
+                </form>
+            </div>
+
+            <!-- Dashboard after login -->
+            <div id="dashboard" style="display:none;">
+                <h2>Dashboard</h2>
+                <div class="form-group">
+                    <label for="filter">Filter by programming language</label>
+                    <select id="filter" onchange="filterExercises()">
+                        <option value="all">All</option>
+                        <option value="C">C</option>
+                        <option value="Python">Python</option>
+                        <option value="Java">Java</option>
+                    </select>
+                </div>
+
+                <div class="exercise-container" id="exercise-list">
+                    <!-- Sample exercises will be displayed here -->
+                </div>
+            </div>
         </div>
     </div>
 
     <script>
+        const exercises = [
+            { title: 'C Exercise 1', language: 'C', description: 'Basic syntax and structure', difficulty: 'Easy', timeLimit: 'None', points: 10 },
+            { title: 'Python Exercise 1', language: 'Python', description: 'Simple calculator', difficulty: 'Medium', timeLimit: '15 minutes', points: 20 },
+            { title: 'Java Exercise 1', language: 'Java', description: 'Object-oriented programming', difficulty: 'Hard', timeLimit: '30 minutes', points: 30 },
+            // More exercises can be added here
+        ];
+
         function showSection(section) {
             const sections = ['home', 'about', 'labs'];
             sections.forEach(s => {
@@ -133,17 +178,50 @@
             }
             document.getElementById(labName).style.display = "block";
             evt.currentTarget.className += " active";
+
+            if (labName === 'Lab2') {
+                document.getElementById('login-container').style.display = 'block';
+                document.getElementById('dashboard').style.display = 'none';
+            }
         }
 
-        // Handle form submission
-        document.getElementById('course-form').onsubmit = function(event) {
+        // Handle login
+        document.getElementById('login-form').onsubmit = function(event) {
             event.preventDefault();
-            alert("Course created/updated successfully.");
+            // Simple login validation (for demonstration purposes)
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            if (username && password) {
+                document.getElementById('login-container').style.display = 'none';
+                document.getElementById('dashboard').style.display = 'block';
+                displayExercises('all'); // Show all exercises initially
+            } else {
+                alert('Please enter both username and password.');
+            }
         };
 
-        // Function to reset the form
-        function cancelForm() {
-            document.getElementById('course-form').reset();
+        // Display exercises on the dashboard
+        function displayExercises(language) {
+            const exerciseList = document.getElementById('exercise-list');
+            exerciseList.innerHTML = ''; // Clear previous exercises
+            exercises.filter(ex => language === 'all' || ex.language === language).forEach(ex => {
+                const card = document.createElement('div');
+                card.className = 'exercise-card';
+                card.innerHTML = `
+                    <h3>${ex.title}</h3>
+                    <p>${ex.description}</p>
+                    <p>Difficulty: ${ex.difficulty}</p>
+                    <p>Time Limit: ${ex.timeLimit}</p>
+                    <p>Points: ${ex.points}</p>
+                `;
+                exerciseList.appendChild(card);
+            });
+        }
+
+        // Filter exercises by language
+        function filterExercises() {
+            const language = document.getElementById('filter').value;
+            displayExercises(language);
         }
 
         // Show the home section by default
