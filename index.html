@@ -9,7 +9,7 @@
         nav {
             background-color: #333;
             color: white;
-            padding: 30px; /* Tăng padding */
+            padding: 15px;
             position: fixed;
             width: 100%;
             top: 0;
@@ -18,95 +18,40 @@
         }
         nav a {
             color: white;
-            margin: 0 30px; /* Tăng khoảng cách giữa các liên kết */
+            margin: 0 15px;
             text-decoration: none;
             display: inline-block; /* Ensure the links appear inline */
         }
         nav a:hover { text-decoration: underline; }
         .container { 
-            padding: 80px; /* Tăng padding */
+            padding: 40px; /* Tăng padding */
             background: white; 
             border-radius: 8px; 
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
-            max-width: 1600px; /* Gấp đôi chiều dài */
-            margin: 100px auto; /* Tăng khoảng cách từ trên xuống */
+            max-width: 1000px; /* Tăng max-width */
+            margin: 70px auto; 
         }
-        .tab { 
-            overflow: hidden; 
-            border: 1px solid #ccc; 
-            background-color: #f1f1f1; 
-            margin-top: 80px; /* Tăng khoảng cách trên */
-            padding: 20px; /* Tăng padding cho tab */
-        }
-        .tab button { 
-            background-color: inherit; 
-            float: left; 
-            border: none; 
-            outline: none; 
-            cursor: pointer; 
-            padding: 28px 32px; /* Tăng padding cho nút */
-            transition: 0.3s; 
-            font-size: 17px; 
-            margin: 0 10px; /* Tăng khoảng cách giữa các nút */
-        }
+        .tab { overflow: hidden; border: 1px solid #ccc; background-color: #f1f1f1; margin-top: 40px; }
+        .tab button { background-color: inherit; float: left; border: none; outline: none; cursor: pointer; padding: 14px 16px; transition: 0.3s; font-size: 17px; }
         .tab button:hover { background-color: #ddd; }
         .tab button.active { background-color: #ccc; }
-        .tabcontent { 
-            display: none; 
-            padding: 12px 24px; /* Tăng padding cho nội dung tab */
-            border: 1px solid #ccc; 
-            border-top: none; 
-            margin-top: 20px;
-            padding: 40px; /* Tăng padding cho nội dung tab */
-        }
-        .form-group { margin-bottom: 30px; } /* Tăng khoảng cách giữa các nhóm form */
-        label { display: block; margin-bottom: 10px; } /* Tăng khoảng cách dưới nhãn */
-        input[type="text"], input[type="password"], textarea, select { 
-            width: 100%; 
-            padding: 20px; /* Tăng padding cho ô nhập liệu */
-            border: 1px solid #ccc; 
-            border-radius: 4px; 
-        }
+        .tabcontent { display: none; padding: 6px 12px; border: 1px solid #ccc; border-top: none; margin-top: 10px;}
+        .form-group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; }
+        input[type="text"], input[type="password"], textarea, select { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; }
         .readonly { background-color: #f5f5f5; border: 1px solid #ccc; }
-        .btn { 
-            padding: 20px 30px; /* Tăng padding cho nút */
-            margin-right: 20px; /* Tăng khoảng cách bên phải */
-            cursor: pointer; 
-            border: none; 
-            border-radius: 4px; 
-        }
+        .btn { padding: 10px 15px; margin-right: 10px; cursor: pointer; border: none; border-radius: 4px; }
         .btn-primary { background-color: blue; color: white; }
         .btn-secondary { background-color: gray; color: white; }
-        .login-container { 
-            max-width: 1200px; /* Gấp đôi chiều dài */
-            margin: 100px auto; 
-            padding: 40px; /* Tăng padding cho container đăng nhập */
-            border: 1px solid #ccc; 
-            background-color: white; 
-            border-radius: 8px; 
-        }
-        .exercise-container { margin-top: 40px; } /* Tăng khoảng cách trên cho danh sách bài tập */
-        .exercise-card { 
-            padding: 20px; /* Tăng padding cho thẻ bài tập */
-            border: 1px solid #ddd; 
-            border-radius: 6px; 
-            margin-bottom: 20px; /* Tăng khoảng cách dưới cho thẻ bài tập */
-            background-color: #f9f9f9; 
-            max-width: 600px; /* Gấp đôi chiều dài cho thẻ bài tập */
-        }
+        .login-container { max-width: 400px; margin: 100px auto; padding: 20px; border: 1px solid #ccc; background-color: white; border-radius: 8px; }
+        .exercise-container { margin-top: 30px; /* Tăng khoảng cách trên */ }
+        .exercise-card { padding: 10px; border: 1px solid #ddd; border-radius: 6px; margin-bottom: 10px; background-color: #f9f9f9; }
         .exercise-card h3 { margin: 0; }
-        .exercise-card p { margin: 10px 0; } /* Tăng khoảng cách giữa các đoạn mô tả */
-        .code-editor { 
-            border: 1px solid #ccc; 
-            background-color: #f0f0f0; 
-            padding: 30px; /* Tăng padding cho trình soạn thảo code */
-            min-height: 250px; 
-            margin-bottom: 40px; /* Tăng khoảng cách dưới cho trình soạn thảo code */
-            max-width: 1200px; /* Gấp đôi chiều dài cho trình soạn thảo code */
-        }
-        .submit-btn { background-color: green; color: white; float: left; padding: 15px 30px; }
-        .quit-btn { background-color: red; color: white; float: right; padding: 15px 30px; }
-        .button-container { display: flex; justify-content: space-between; margin-top: 20px; } /* Tăng khoảng cách trên cho container nút */
+        .exercise-card p { margin: 5px 0; }
+        .code-editor { border: 1px solid #ccc; background-color: #f0f0f0; padding: 15px; min-height: 200px; margin-bottom: 20px; }
+        .submit-btn { background-color: green; color: white; float: left; }
+        .quit-btn { background-color: red; color: white; float: right; }
+        .button-container { display: flex; justify-content: space-between; }
     </style>
 </head>
 <body>
@@ -186,38 +131,32 @@
                 <form id="login-form">
                     <div class="form-group">
                         <label for="username">Username/Email</label>
-                        <input type="text" id="username" placeholder="Enter username or email" required>
+                        <input type="text" id="username" placeholder="Enter your username or email" required>
                     </div>
                     <div class="form-group">
                         <label for="password">Password</label>
-                        <input type="password" id="password" placeholder="Enter password" required>
+                        <input type="password" id="password" placeholder="Enter your password" required>
                     </div>
                     <button type="submit" class="btn btn-primary">Login</button>
-                    <a href="#" style="color: blue;">Forgot Password?</a>
+                    <a href="#" style="display:block; margin-top:10px;">Forgot Password?</a>
                 </form>
             </div>
 
-            <!-- Dashboard -->
+            <!-- Dashboard after login -->
             <div id="dashboard" style="display:none;">
                 <h2>Dashboard</h2>
-                <select id="filter" onchange="filterExercises()">
-                    <option value="all">All Languages</option>
-                    <option value="C">C</option>
-                    <option value="Python">Python</option>
-                    <option value="Java">Java</option>
-                </select>
-                <div class="exercise-container" id="exercise-list">
-                    <!-- Exercises will be displayed here -->
+                <div class="form-group">
+                    <label for="filter">Filter by programming language</label>
+                    <select id="filter" onchange="filterExercises()">
+                        <option value="all">All</option>
+                        <option value="C">C</option>
+                        <option value="Python">Python</option>
+                        <option value="Java">Java</option>
+                    </select>
                 </div>
-            </div>
 
-            <!-- Code Editor -->
-            <div class="code-editor" id="code-editor" style="display:none;">
-                <h3 id="selected-exercise-title"></h3>
-                <textarea id="code-area" rows="10" placeholder="Write your code here..."></textarea>
-                <div class="button-container">
-                    <button class="btn submit-btn" onclick="submitCode()">Submit</button>
-                    <button class="btn quit-btn" onclick="quitExercise()">Quit</button>
+                <div class="exercise-container" id="exercise-list">
+                    <!-- Exercises will be populated here -->
                 </div>
             </div>
         </div>
@@ -225,100 +164,75 @@
 
     <script>
         const exercises = [
-            { title: 'C Exercise 1', language: 'C', description: 'Description for C Exercise 1', difficulty: 'Easy', timeLimit: '30 mins', points: 'Chưa làm' },
-            { title: 'Python Exercise 1', language: 'Python', description: 'Description for Python Exercise 1', difficulty: 'Medium', timeLimit: '1 hour', points: 'Chưa làm' },
-            { title: 'Java Exercise 1', language: 'Java', description: 'Description for Java Exercise 1', difficulty: 'Hard', timeLimit: '2 hours', points: 'Chưa làm' }
+            { id: 1, name: "Exercise 1", description: "This is a C exercise.", language: "C" },
+            { id: 2, name: "Exercise 2", description: "This is a Python exercise.", language: "Python" },
+            { id: 3, name: "Exercise 3", description: "This is a Java exercise.", language: "Java" }
         ];
 
         function showSection(section) {
-            const sections = ['home', 'about', 'labs'];
-            sections.forEach(sec => document.getElementById(sec).style.display = 'none');
+            const sections = document.querySelectorAll('.container');
+            sections.forEach(s => s.style.display = 'none');
             document.getElementById(section).style.display = 'block';
         }
 
         function openLab(evt, labName) {
             const tabcontent = document.getElementsByClassName("tabcontent");
             for (let i = 0; i < tabcontent.length; i++) {
-                tabcontent[i].style.display = "none";
+                tabcontent[i].style.display = "none";  
             }
             const tablinks = document.getElementsByClassName("tablinks");
             for (let i = 0; i < tablinks.length; i++) {
                 tablinks[i].className = tablinks[i].className.replace(" active", "");
             }
-            document.getElementById(labName).style.display = "block";
+            document.getElementById(labName).style.display = "block"; 
             evt.currentTarget.className += " active";
-
-            if (labName === 'Lab2') {
-                document.getElementById('login-container').style.display = 'block';
-                document.getElementById('dashboard').style.display = 'none';
-            }
         }
 
-        // Handle login
-        document.getElementById('login-form').onsubmit = function(event) {
-            event.preventDefault();
-            const username = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
-            if (username && password) {
-                document.getElementById('login-container').style.display = 'none';
-                document.getElementById('dashboard').style.display = 'block';
-                displayExercises('all'); // Show all exercises initially
-            } else {
-                alert('Please enter both username and password.');
-            }
+        document.getElementById('course-form').onsubmit = function(e) {
+            e.preventDefault();
+            alert('Course Created!');
         };
 
-        // Display exercises on the dashboard
-        function displayExercises(language) {
+        document.getElementById('login-form').onsubmit = function(e) {
+            e.preventDefault();
+            document.getElementById('login-container').style.display = 'none';
+            document.getElementById('dashboard').style.display = 'block';
+            displayExercises();
+        };
+
+        function displayExercises() {
             const exerciseList = document.getElementById('exercise-list');
-            exerciseList.innerHTML = ''; // Clear previous exercises
-            exercises.filter(ex => language === 'all' || ex.language === language).forEach((ex, index) => {
-                const card = document.createElement('div');
-                card.className = 'exercise-card';
-                card.innerHTML = `
-                    <h3>${ex.title}</h3>
-                    <p>${ex.description}</p>
-                    <p>Difficulty: ${ex.difficulty}</p>
-                    <p>Time Limit: ${ex.timeLimit}</p>
-                    <p>Points: ${ex.points}</p>
-                    <button onclick="startExercise(${index})">Start Exercise</button>
-                `;
-                exerciseList.appendChild(card);
+            exerciseList.innerHTML = '';
+            exercises.forEach(exercise => {
+                const exerciseCard = document.createElement('div');
+                exerciseCard.className = 'exercise-card';
+                exerciseCard.innerHTML = `<h3>${exercise.name}</h3><p>${exercise.description}</p><button onclick="startExercise(${exercise.id})">Start Exercise</button>`;
+                exerciseList.appendChild(exerciseCard);
             });
         }
 
-        // Start exercise and show code editor
-        function startExercise(index) {
-            const selectedExercise = exercises[index];
-            document.getElementById('selected-exercise-title').innerText = selectedExercise.title;
-            document.getElementById('code-editor').style.display = 'block';
-            document.getElementById('code-area').value = ''; // Clear previous code
-            // Update the exercise points to show "In progress" instead of "Chưa làm"
-            selectedExercise.points = 'In progress';
-            displayExercises('all'); // Refresh exercise list to show updated points
-        }
-
-        // Handle code submission
-        function submitCode() {
-            alert('Code submitted successfully!');
-            // Here you can implement the logic to run the code and show the results
-        }
-
-        // Handle quitting the exercise
-        function quitExercise() {
-            document.getElementById('code-editor').style.display = 'none';
-            // Additional logic to handle quitting can be added here
-        }
-
-        // Filter exercises by language
         function filterExercises() {
-            const language = document.getElementById('filter').value;
-            displayExercises(language);
+            const filterValue = document.getElementById('filter').value;
+            const exerciseList = document.getElementById('exercise-list');
+            exerciseList.innerHTML = '';
+
+            exercises.forEach(exercise => {
+                if (filterValue === 'all' || exercise.language === filterValue) {
+                    const exerciseCard = document.createElement('div');
+                    exerciseCard.className = 'exercise-card';
+                    exerciseCard.innerHTML = `<h3>${exercise.name}</h3><p>${exercise.description}</p><button onclick="startExercise(${exercise.id})">Start Exercise</button>`;
+                    exerciseList.appendChild(exerciseCard);
+                }
+            });
         }
 
-        // Show the home section by default
-        showSection('home');
-    </script>
+        function startExercise(id) {
+            alert('Starting Exercise ' + id);
+        }
 
+        function cancelForm() {
+            document.getElementById('course-form').reset();
+        }
+    </script>
 </body>
 </html>
