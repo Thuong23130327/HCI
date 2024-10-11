@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav class="navMenu">
+        <a href="index.html">Home</a>
+        <a class="active" href="about.html">
+            About</a>
+        <a href="labs.html">
+            Labs</a>
+    </nav>
+
+    <div class="container" id="about">
+        <h1>About</h1>
+        <h4>Nguyễn Hoài Thương - 23130327</h4>
+        <h4>Lớp DH23DTB -Trường ĐH Nông Lâm TPHCM</h4>
+    </div>
+    <script>
+        // Lấy tất cả các liên kết trong thanh menu
+        const navLinks = document.querySelectorAll('.nav a');
+
+        // Thêm sự kiện click cho từng liên kết
+        navLinks.forEach(link => {
+            link.addEventListener('click', function () {
+                // Xóa lớp 'active' khỏi tất cả các liên kết
+                navLinks.forEach(item => item.classList.remove('active'));
+
+                // Thêm lớp 'active' cho liên kết được click
+                this.classList.add('active');
+            });
+        });
+
+        // Đảm bảo giữ trạng thái active khi tải lại trang dựa trên URL
+        const currentPage = window.location.pathname;
+        navLinks.forEach(link => {
+            if (link.getAttribute('href') === currentPage) {
+                link.classList.add('active');
+            }
+        });
+
+    </script>
+</body>
+
+</html>

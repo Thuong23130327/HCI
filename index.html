@@ -1,238 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Course Management</title>
-    <style>
-        body {font-family: Arial; margin: 0; padding: 0; background-color: #f9f9f9;}
-        nav {
-            background-color: #333;
-            color: white;
-            padding: 15px;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            text-align: center; /* Center the navigation links */
-        }
-        nav a {
-            color: white;
-            margin: 0 15px;
-            text-decoration: none;
-            display: inline-block; /* Ensure the links appear inline */
-        }
-        nav a:hover { text-decoration: underline; }
-        .container { 
-            padding: 40px; /* Tăng padding */
-            background: white; 
-            border-radius: 8px; 
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
-            max-width: 1000px; /* Tăng max-width */
-            margin: 70px auto; 
-        }
-        .tab { overflow: hidden; border: 1px solid #ccc; background-color: #f1f1f1; margin-top: 40px; }
-        .tab button { background-color: inherit; float: left; border: none; outline: none; cursor: pointer; padding: 14px 16px; transition: 0.3s; font-size: 17px; }
-        .tab button:hover { background-color: #ddd; }
-        .tab button.active { background-color: #ccc; }
-        .tabcontent { display: none; padding: 6px 12px; border: 1px solid #ccc; border-top: none; margin-top: 10px;}
-        .form-group { margin-bottom: 15px; }
-        label { display: block; margin-bottom: 5px; }
-        input[type="text"], input[type="password"], textarea, select { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; }
-        .readonly { background-color: #f5f5f5; border: 1px solid #ccc; }
-        .btn { padding: 10px 15px; margin-right: 10px; cursor: pointer; border: none; border-radius: 4px; }
-        .btn-primary { background-color: blue; color: white; }
-        .btn-secondary { background-color: gray; color: white; }
-        .login-container { max-width: 400px; margin: 100px auto; padding: 20px; border: 1px solid #ccc; background-color: white; border-radius: 8px; }
-        .exercise-container { margin-top: 30px; /* Tăng khoảng cách trên */ }
-        .exercise-card { padding: 10px; border: 1px solid #ddd; border-radius: 6px; margin-bottom: 10px; background-color: #f9f9f9; }
-        .exercise-card h3 { margin: 0; }
-        .exercise-card p { margin: 5px 0; }
-        .code-editor { border: 1px solid #ccc; background-color: #f0f0f0; padding: 15px; min-height: 200px; margin-bottom: 20px; }
-        .submit-btn { background-color: green; color: white; float: left; }
-        .quit-btn { background-color: red; color: white; float: right; }
-        .button-container { display: flex; justify-content: space-between; }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <nav>
-        <a href="#home" onclick="showSection('home')">Home</a>
-        <a href="#about" onclick="showSection('about')">About</a>
-        <a href="#labs" onclick="showSection('labs')">Labs</a>
+    <nav class="navMenu">
+
+        <a class="active" href="index.html">Home</a>
+        <a href="about.html" id="about"> About</a>
+        <a href="labs.html" id="labs"> Labs</a>
+
     </nav>
+
+
 
     <div class="container" id="home">
         <h1>Home</h1>
-        <p>Welcome to the Course Management System.</p>
-        <p>Total number of labs: 2</p>
+        <p>Đây là trang home</p>
     </div>
 
-    <div class="container" id="about" style="display:none;">
-        <h1>About</h1>
-        <p>Nguyễn Hoài Thương - 23130327</p>
-    </div>
 
-    <div class="container" id="labs" style="display:none;">
-        <h1>Labs</h1>
-        <div class="tab">
-            <button class="tablinks active" onclick="openLab(event, 'Lab1')">Lab 1</button>
-            <button class="tablinks" onclick="openLab(event, 'Lab2')">Lab 2</button>
-        </div>
 
-        <div id="Lab1" class="tabcontent" style="display:block;">
-            <h2>Lab 1: Course Management</h2>
-            <form id="course-form">
-                <div class="form-group">
-                    <label for="course_id">Course ID</label>
-                    <input type="text" id="course_id" placeholder="Auto-generated" readonly class="readonly">
-                </div>
 
-                <div class="form-group">
-                    <label for="course_name">Course Name</label>
-                    <input type="text" id="course_name" placeholder="Enter course name" required maxlength="255">
-                </div>
-
-                <div class="form-group">
-                    <label for="course_description">Course Description (optional)</label>
-                    <textarea id="course_description" placeholder="Enter course description" rows="4"></textarea>
-                </div>
-
-                <div class="form-group">
-                    <label for="instructor">Instructor</label>
-                    <select id="instructor" required>
-                        <option value="">Select an instructor</option>
-                        <option value="1">Instructor A</option>
-                        <option value="2">Instructor B</option>
-                        <option value="3">Instructor C</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label>Created At</label>
-                    <div id="created_at" class="readonly">Auto-generated date</div>
-                </div>
-
-                <div class="form-group">
-                    <label>Last Updated At</label>
-                    <div id="updated_at" class="readonly">Auto-generated date</div>
-                </div>
-
-                <button type="submit" class="btn btn-primary">Create Course</button>
-                <button type="button" class="btn btn-secondary" onclick="cancelForm()">Cancel</button>
-            </form>
-        </div>
-
-        <!-- Lab 2: Authentication and Dashboard -->
-        <div id="Lab2" class="tabcontent">
-            <!-- Login Form -->
-            <div class="login-container" id="login-container">
-                <h2>Login</h2>
-                <form id="login-form">
-                    <div class="form-group">
-                        <label for="username">Username/Email</label>
-                        <input type="text" id="username" placeholder="Enter your username or email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="password">Password</label>
-                        <input type="password" id="password" placeholder="Enter your password" required>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Login</button>
-                    <a href="#" style="display:block; margin-top:10px;">Forgot Password?</a>
-                </form>
-            </div>
-
-            <!-- Dashboard after login -->
-            <div id="dashboard" style="display:none;">
-                <h2>Dashboard</h2>
-                <div class="form-group">
-                    <label for="filter">Filter by programming language</label>
-                    <select id="filter" onchange="filterExercises()">
-                        <option value="all">All</option>
-                        <option value="C">C</option>
-                        <option value="Python">Python</option>
-                        <option value="Java">Java</option>
-                    </select>
-                </div>
-
-                <div class="exercise-container" id="exercise-list">
-                    <!-- Exercises will be populated here -->
-                </div>
-            </div>
-        </div>
-    </div>
 
     <script>
-        const exercises = [
-            { id: 1, name: "Exercise 1", description: "This is a C exercise.", language: "C" },
-            { id: 2, name: "Exercise 2", description: "This is a Python exercise.", language: "Python" },
-            { id: 3, name: "Exercise 3", description: "This is a Java exercise.", language: "Java" }
-        ];
+        // Lấy tất cả các liên kết trong thanh menu
+        const navLinks = document.querySelectorAll('.nav a');
 
-        function showSection(section) {
-            const sections = document.querySelectorAll('.container');
-            sections.forEach(s => s.style.display = 'none');
-            document.getElementById(section).style.display = 'block';
-        }
+        // Thêm sự kiện click cho từng liên kết
+        navLinks.forEach(link => {
+            link.addEventListener('click', function () {
+                // Xóa lớp 'active' khỏi tất cả các liên kết
+                navLinks.forEach(item => item.classList.remove('active'));
 
-        function openLab(evt, labName) {
-            const tabcontent = document.getElementsByClassName("tabcontent");
-            for (let i = 0; i < tabcontent.length; i++) {
-                tabcontent[i].style.display = "none";  
-            }
-            const tablinks = document.getElementsByClassName("tablinks");
-            for (let i = 0; i < tablinks.length; i++) {
-                tablinks[i].className = tablinks[i].className.replace(" active", "");
-            }
-            document.getElementById(labName).style.display = "block"; 
-            evt.currentTarget.className += " active";
-        }
-
-        document.getElementById('course-form').onsubmit = function(e) {
-            e.preventDefault();
-            alert('Course Created!');
-        };
-
-        document.getElementById('login-form').onsubmit = function(e) {
-            e.preventDefault();
-            document.getElementById('login-container').style.display = 'none';
-            document.getElementById('dashboard').style.display = 'block';
-            displayExercises();
-        };
-
-        function displayExercises() {
-            const exerciseList = document.getElementById('exercise-list');
-            exerciseList.innerHTML = '';
-            exercises.forEach(exercise => {
-                const exerciseCard = document.createElement('div');
-                exerciseCard.className = 'exercise-card';
-                exerciseCard.innerHTML = `<h3>${exercise.name}</h3><p>${exercise.description}</p><button onclick="startExercise(${exercise.id})">Start Exercise</button>`;
-                exerciseList.appendChild(exerciseCard);
+                // Thêm lớp 'active' cho liên kết được click
+                this.classList.add('active');
             });
-        }
+        });
 
-        function filterExercises() {
-            const filterValue = document.getElementById('filter').value;
-            const exerciseList = document.getElementById('exercise-list');
-            exerciseList.innerHTML = '';
+        // Đảm bảo giữ trạng thái active khi tải lại trang dựa trên URL
+        const currentPage = window.location.pathname;
+        navLinks.forEach(link => {
+            if (link.getAttribute('href') === currentPage) {
+                link.classList.add('active');
+            }
+        });
 
-            exercises.forEach(exercise => {
-                if (filterValue === 'all' || exercise.language === filterValue) {
-                    const exerciseCard = document.createElement('div');
-                    exerciseCard.className = 'exercise-card';
-                    exerciseCard.innerHTML = `<h3>${exercise.name}</h3><p>${exercise.description}</p><button onclick="startExercise(${exercise.id})">Start Exercise</button>`;
-                    exerciseList.appendChild(exerciseCard);
-                }
-            });
-        }
-
-        function startExercise(id) {
-            alert('Starting Exercise ' + id);
-        }
-
-        function cancelForm() {
-            document.getElementById('course-form').reset();
-        }
     </script>
 </body>
+
 </html>
