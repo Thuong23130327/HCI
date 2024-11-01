@@ -1,0 +1,180 @@
+/* Reset default margins and paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header nav a {
+    color: white;
+    text-decoration: none;
+    margin-right: 20px;
+}
+
+header .user-actions a {
+    margin-left: 15px;
+}
+
+main {
+    padding: 20px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Left side: Video and course details */
+.left-side {
+    width: 65%;
+}
+
+.video-container {
+    width: 100%;
+    background-color: #222;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+/* Set iframe to fit the video container's width */
+.video-container iframe {
+    border-radius: 8px;
+    width: 100%;
+    height: 500px; /* Đặt chiều cao video thành 500px */
+}
+
+.course-details {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.course-details h2 {
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+}
+
+.course-rating {
+    margin-top: 10px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.course-rating span {
+    margin-right: 10px;
+    font-size: 0.9rem;
+}
+
+.learning-outcomes h3 {
+    margin-bottom: 10px;
+}
+
+.learning-outcomes ul {
+    list-style: disc;
+    margin-left: 20px;
+}
+
+/* Right side: Course content list */
+.right-side {
+    width: 30%;
+}
+
+.course-content {
+    background-color: #f1f1f1;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.course-content h3 {
+    margin-bottom: 10px;
+}
+
+.course-content ul {
+    list-style: none;
+}
+
+.course-content li {
+    padding: 8px 0;
+    border-bottom: 1px solid #ccc;
+}
+/* lab4style.css */
+
+.nav-link {
+    display: inline-block; /* Đảm bảo các liên kết hiển thị ngang hàng */
+    padding: 5px; /* Tạo khoảng cách xung quanh */
+}
+
+.separator {
+    display: inline-block;
+    margin: 0 5px; /* Khoảng cách 5px hai bên thanh phân cách */
+}
+
+.nav-link:first-child {
+    margin-right: auto; /* Căn liên kết đầu tiên sang phải */
+}
+
+.nav-link:last-child {
+    margin-left: auto; /* Căn liên kết cuối cùng sang trái */
+}
+
+
+.video-container {
+    position: relative; /* Để đặt thanh tab lên trên video */
+}
+
+.tab-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #f0f0f0; /* Màu nền thanh tab */
+    padding: 10px;
+}
+
+.tab-bar span {
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.course-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    margin-top: 20px; /* Khoảng cách từ thanh tab */
+}
+
+.course-info {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.course-info span {
+    font-size: 16px;
+    color: #666;
+}
+

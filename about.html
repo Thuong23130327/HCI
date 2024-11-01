@@ -5,48 +5,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="aboutstyle.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 </head>
 
 <body>
-
-    <nav class="navMenu">
-        <a href="index.html">Home</a>
-        <a class="active" href="about.html">
-            About</a>
-        <a href="labs.html">
-            Labs</a>
+    <nav class="navMenu navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="index.html">Home</a>
+        <a class="navbar-brand active" href="about.html">About</a>
+        <a class="navbar-brand" href="labs.html">Labs</a>
     </nav>
-
     <div class="container" id="about">
-        <h1>About</h1>
-        <h4>Nguyễn Hoài Thương - 23130327</h4>
-        <h4>Lớp DH23DTB -Trường ĐH Nông Lâm TPHCM</h4>
+        <h1 class="my-4">About</h1>
+        <div class="text-center mb-4">
+            <img src="https://scontent.fsgn5-14.fna.fbcdn.net/v/t39.30808-6/461781563_921143919886361_2481205623092915827_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=aA0p40CrqrwQ7kNvgGZxpod&_nc_zt=23&_nc_ht=scontent.fsgn5-14.fna&_nc_gid=AumySrkpPxDO0NroGX9qj7P&oh=00_AYCdXEfMFo8m1eBjeuXq39kN56cQtk1AnxRzrNodzFKZmw&oe=67219473"
+                alt="Nguyễn Hoài Thương" class="rounded-circle" style="width:150px; height:150px; border-radius:8px;">
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Thông tin cá nhân</h4>
+                        <p class="card-text">Ngày sinh: 13/05/2005</p>
+                        <p class="card-text">Email: 23130327@st.hcmuaf.edu.vn</p>
+                        <p class="card-text">Số điện thoại: +(84) 708870329</p>
+                        <p class="card-text">Địa chỉ: An Bình, Dĩ An, Bình Dương</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Học vấn/ Kĩ năng</h4>
+                        <p class="card-text">Học công nghệ thông tin tại trường đại học nông lâm TP.HCM</p>
+                        <p class="card-text">Kĩ năng căn bản: HTML, Java</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <script>
-        // Lấy tất cả các liên kết trong thanh menu
-        const navLinks = document.querySelectorAll('.nav a');
-
-        // Thêm sự kiện click cho từng liên kết
-        navLinks.forEach(link => {
-            link.addEventListener('click', function () {
-                // Xóa lớp 'active' khỏi tất cả các liên kết
-                navLinks.forEach(item => item.classList.remove('active'));
-
-                // Thêm lớp 'active' cho liên kết được click
-                this.classList.add('active');
-            });
-        });
-
-        // Đảm bảo giữ trạng thái active khi tải lại trang dựa trên URL
-        const currentPage = window.location.pathname;
-        navLinks.forEach(link => {
-            if (link.getAttribute('href') === currentPage) {
-                link.classList.add('active');
-            }
-        });
-
-    </script>
+    <script src="aboutscript.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 </body>
 
 </html>
