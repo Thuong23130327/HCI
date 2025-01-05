@@ -271,3 +271,41 @@ h1 {
   .dropdown:hover .dropdown-content {display: block;}
   
   .dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+  
+.sidenav {
+    position: fixed;
+    /* Giữ cho thanh này ở một vị trí cố định khi cuộn */
+    right: 0;
+    /* Canh phải */
+    top: 15px;
+    /* Bắt đầu từ phía trên */
+    
+    /* Độ rộng của thanh */
+    /* Chiều cao của thanh */
+    background-color: #e9e9e9;
+    /* Màu nền */
+    color: #fff;
+    /* Màu chữ */
+    padding: 20px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+  
+    overflow-x: hidden;
+    padding: 8px 0;
+  }
+  
+  .sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: underline;
+    font-size: 25px;
+    color: #2196F3;
+    display: block;
+    font-size: 25px;
+    font-family: 'Times New Roman', Times, serif;
+  }
+  
+  .sidenav a:hover {
+    color: #064579;
+  }
+  

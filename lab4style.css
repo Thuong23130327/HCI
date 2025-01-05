@@ -10,25 +10,25 @@ body {
     background-color: #f9f9f9;
 }
 
-header {
+.header_section1 {
     background-color: #333;
     color: white;
     padding: 10px 20px;
 }
 
-header nav {
+.header_section1 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-header nav a {
+.header_section1 nav a {
     color: white;
     text-decoration: none;
     margin-right: 20px;
 }
 
-header .user-actions a {
+.header_section1 .user-actions a {
     margin-left: 15px;
 }
 
