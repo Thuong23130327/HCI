@@ -975,7 +975,7 @@ img {
   /* Giữ cho thanh này ở một vị trí cố định khi cuộn */
   right: 0;
   /* Canh phải */
-  top: 15px;
+  top: 160px;
   /* Bắt đầu từ phía trên */
   
   /* Độ rộng của thanh */
@@ -994,7 +994,7 @@ img {
 
 .sidenav a {
   padding: 6px 8px 6px 16px;
-  text-decoration: underline;
+  text-decoration: none;
   font-size: 25px;
   color: #2196F3;
   display: block;

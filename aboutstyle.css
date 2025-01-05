@@ -11,7 +11,7 @@ body {
     margin-bottom: 20px;
 }
 .card-body {
-    background-color: #b1e09a ;
+    /* background-color: #b1e09a ; */
     border-radius: 10px;
 }
 .card-title {
