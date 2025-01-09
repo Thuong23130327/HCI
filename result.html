@@ -110,6 +110,75 @@
     .btn {
       margin-top: 10px;
     }
+
+
+    #image-card img#image-content {
+      max-width: 100%;
+      /* Hình ảnh không vượt quá chiều rộng của card */
+      height: 110%;
+      /* Giữ tỷ lệ khung hình */
+      display: block;
+      /* Loại bỏ khoảng trắng dưới hình ảnh */
+    }
+
+    #image-card .card-header {
+      display: flex;
+      justify-content: space-between;
+      /* Dãn đều các nội dung trong header */
+      align-items: center;
+      /* Căn giữa nội dung theo chiều dọc */
+      background-color: #f8f9fa;
+      /* Màu nền nhẹ cho header */
+      padding: 10px;
+      /* Khoảng cách nội dung trong header */
+      border-bottom: 1px solid #ddd;
+      /* Viền ngăn cách header với nội dung */
+    }
+
+    #image-card .close-btn {
+      cursor: pointer;
+      color: #ff6b6b;
+      /* Màu đỏ cho nút đóng */
+      font-weight: bold;
+    }
+
+    #image-card .close-btn:hover {
+      color: #ff3b3b;
+      /* Màu đỏ đậm hơn khi hover */
+    }
+
+    #image-card .btn {
+      margin-right: 10px;
+      /* Khoảng cách giữa nút và các thành phần khác */
+    }
+
+    #image-card {
+      position: absolute;
+      /* Đặt card ở vị trí tuyệt đối */
+      top: 50px;
+      /* Dịch chuyển card xuống 50px từ đỉnh */
+      left: 50%;
+      /* Căn giữa card theo chiều ngang */
+      transform: translateX(-50%);
+      /* Căn giữa thật sự theo chiều ngang */
+      z-index: 10;
+      /* Đặt card nổi lên trên các đối tượng khác */
+      max-height: 1000px;
+      max-width: 1000px;
+      overflow-x: auto;
+
+      /* Chiều cao tối đa */
+      overflow-y: auto;
+      /* Thanh cuộn khi cần */
+      border: 1px solid #ddd;
+      /* Viền card */
+      border-radius: 15px;
+      /* Bo tròn góc */
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+      /* Hiệu ứng đổ bóng */
+      background-color: #fff;
+      /* Màu nền card */
+    }
   </style>
 
 </head>
@@ -173,7 +242,7 @@
                 Thương's <span>Result</span>
               </h2>
               <p class="description">
-                Thể hiện các đóng góp của Thương vào projct, web nhóm
+                Thể hiện các đóng góp của Thương vào project và web nhóm
               </p>
             </div>
 
@@ -198,43 +267,34 @@
                 <div class="row">
                   <div class="col-md-4">
                     <div class="box">
-                      <div class="img-box">
-                        <img src="images/s1.png" alt="">
-                      </div>
                       <div class="detail-box">
-                        <h5>Currency Wallet</h5>
-                        <p>Fact that a reader will be distracted by the readable content of a page.</p>
-                        <button class="btn btn-primary btn-sm">Chi tiết</button> <button
-                          class="btn btn-secondary btn-sm show-image" data-image="images/Contact.png">Hình
-                          ảnh</button>
+                        <h5>Tự đánh giá</h5>
+                        <p>*Hoàn thành: 90% <br>
+                          *Web Project: 20% <br>
+                          *Group Page: 20%</p>
                       </div>
                     </div>
                   </div>
                   <div class="col-md-4">
                     <div class="box">
-                      <div class="img-box">
-                        <img src="images/s2.png" alt="">
-                      </div>
                       <div class="detail-box">
-                        <h5>Security Storage</h5>
-                        <p>Fact that a reader will be distracted by the readable content of a page.</p>
-                        <button class="btn btn-primary btn-sm">Chi tiết</button> <button
-                          class="btn btn-secondary btn-sm show-image" data-image="images/Contact.png">Hình
-                          ảnh</button>
+                        <h5>Đã học được</h5>
+                        <p>*Được tiếp cận, học hỏi thêm kiến thức về HTML, CSS, JS <br>
+                          *Trau dồi khả năng tra cứu thông tin, nghiên cứu, tham khảo <br>
+                          *Tìm hiểu công nghệ, chat gpt</p>
                       </div>
                     </div>
                   </div>
+
                   <div class="col-md-4">
                     <div class="box">
-                      <div class="img-box">
-                        <img src="images/s3.png" alt="">
-                      </div>
                       <div class="detail-box">
-                        <h5>Expert Support</h5>
-                        <p>Fact that a reader will be distracted by the readable content of a page.</p>
-                        <button class="btn btn-primary btn-sm">Chi tiết</button> <button
-                          class="btn btn-secondary btn-sm show-image" data-image="images/Contact.png">Hình
-                          ảnh</button>
+                        <h5>Khó khăn</h5>
+                        <p>*Chưa tối ưu được các code <br>
+                          *Giao diện còn chưa đẹp mắt, phù hợp người dùng <br>
+                          *Các chức năng còn một vài khiếm khuyết <br>
+                          *Chưa tận dụng bootstrap</p>
+
                       </div>
                     </div>
                   </div>
@@ -268,9 +328,20 @@
                     <div class="box">
 
                       <div class="detail-box">
-                        <h5>Bản tin trang CLB/TỔ/ĐỘI/NHÓM</h5>
+                        <h5>Bản tin trang CLB/ TỔ/ ĐỘI/ NHÓM</h5>
                         <button class="btn btn-primary btn-sm">Chi tiết</button> <button
                           class="btn btn-secondary btn-sm show-image" data-image="images/tinclb.png">Hình
+                          ảnh</button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="box">
+                      <div class="detail-box">
+                        <h5>Tổng hợp CLB/ TỔ/ ĐỘI/ NHÓM</h5>
+                        <p>Tham khảo ý tưởng, thiết kế giao diện Contact</p>
+                        <button class="btn btn-primary btn-sm">Đi đến</button> <button
+                          class="btn btn-secondary btn-sm show-image" data-image="images/tongHop.png">Hình
                           ảnh</button>
                       </div>
                     </div>
@@ -283,10 +354,10 @@
                   <div class="col-md-4">
                     <div class="box">
                       <div class="detail-box">
-                        <h5>Currency Wallet</h5>
-                        <p>Fact that a reader will be distracted by the readable content of a page.</p>
-                        <button class="btn btn-primary btn-sm">Chi tiết</button> <button
-                          class="btn btn-secondary btn-sm show-image" data-image="images/Contact.png">Hình
+                        <h5>Requirement</h5>
+                        <p>Các chức năng, phân công của hệ thống</p>
+                        <button class="btn btn-primary btn-sm">Đi đến</button> <button
+                          class="btn btn-secondary btn-sm show-image" data-image="images/requi1.png">Hình
                           ảnh</button>
                       </div>
                     </div>
@@ -294,22 +365,10 @@
                   <div class="col-md-4">
                     <div class="box">
                       <div class="detail-box">
-                        <h5>Security Storage</h5>
-                        <p>Fact that a reader will be distracted by the readable content of a page.</p>
-                        <button class="btn btn-primary btn-sm">Chi tiết</button> <button
-                          class="btn btn-secondary btn-sm show-image" data-image="images/Contact.png">Hình
-                          ảnh</button>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-4">
-                    <div class="box">
-
-                      <div class="detail-box">
-                        <h5>Expert Support</h5>
-                        <p>Fact that a reader will be distracted by the readable content of a page.</p>
-                        <button class="btn btn-primary btn-sm">Chi tiết</button>
-                        <button class="btn btn-secondary btn-sm show-image" data-image="images/Contact.png">Hình
+                        <h5>Group diary</h5>
+                        <p>Quá trình chuẩn bị cho project qua các tuần</p>
+                        <button class="btn btn-primary btn-sm">Đi đến</button> <button
+                          class="btn btn-secondary btn-sm show-image" data-image="images/diary1.png">Hình
                           ảnh</button>
                       </div>
                     </div>
