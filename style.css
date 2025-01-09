@@ -116,6 +116,7 @@ a:focus {
   z-index: -1;
 }
 
+
 .hero_area .hero_bg_box .bg_img_box {
   min-width: 100%;
   min-height: 100%;
@@ -137,6 +138,7 @@ a:focus {
 
 .header_section {
   padding: 15px 0;
+  background-color: #007bff;
 }
 
 .header_section .container-fluid {
