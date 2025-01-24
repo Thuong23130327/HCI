@@ -22,7 +22,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
 
   <!--owl slider stylesheet -->
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
 
   <!-- font awesome style -->
   <link href="css/font-awesome.min.css" rel="stylesheet" />
@@ -84,28 +85,24 @@
     </header>
     <!-- end header section -->
   </div>
-
   <!-- Thanh các tab labs -->
-
   <div class="sidenav">
-    <a href="#lab1"  onclick="window.location.href='lab1.html'">lab 1</a>
-    <a href="#lab2" onclick="window.location.href='lab2.html'">lab 2</a>
-    <a href="#lab3" onclick="window.location.href='lab3.html'">lab 3</a>
-    <a href="#lab4" onclick="window.location.href='lab4.html'">lab 4</a>
-    <a href="#lab5" onclick="window.location.href='lab5.html'">lab 5</a>
-    <a href="#lab6" onclick="window.location.href='lab6.html'">lab 6</a>
-    <a href="#lab7" onclick="window.location.href='lab7.html'">lab 7</a>
-    <a href="#lab8" onclick="window.location.href='lab8.html'">lab 8</a>
+    <a href="#lab1" onclick="window.location.href='lab1.html'">Lab 1</a>
+    <a href="#lab2" onclick="window.location.href='lab2.html'">Lab 2</a>
+    <a href="#lab3" onclick="window.location.href='lab3.html'">Lab 3</a>
+    <a href="#lab4" onclick="window.location.href='lab4.html'">Lab 4</a>
+    <a href="#lab5" onclick="window.location.href='lab5.html'">Lab 5</a>
+    <a href="#lab6" onclick="window.location.href='lab6.html'">Lab 6</a>
+    <a href="#home" onclick="window.location.href='index.html'">Home</a>
   </div>
-
   <!-- kết thúc thanh các labs -->
-  
 
   <!-- jQery -->
   <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
   <!-- popper js -->
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
-  </script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
   <!-- bootstrap js -->
   <script type="text/javascript" src="js/bootstrap.js"></script>
   <!-- owl slider -->
@@ -124,73 +121,103 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Course Management System</title>
-    <link rel="stylesheet" href="lab1style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Course Management System</title>
+  <link rel="stylesheet" href="lab1style.css">
 </head>
-<body> 
+
+<body>
+  <div class="button-main">
+    <button class="btn-req" onclick="showDiv('Requi')">Requirement </button>
+    <button class="btn-des" onclick="showDiv('Des')">Design </button>
+    <button class="btn-imp" onclick="showDiv('container')">Implement </button>
+  </div>
+
+  <!-- div cho impl -->
+  <div class="hidden" id="container">
     <div class="container">
-        <h1>Course Management System</h1>
-        
-        <!-- Course Form -->
-        <form id="courseForm">
-            <div class="form-group">
-                <label for="courseId">Course ID (Auto-generated)</label>
-                <input type="text" id="courseId" name="courseId" readonly>
-            </div>
-            
-            <div class="form-group">
-                <label for="courseName">Course Name <span class="required">*</span></label>
-                <input type="text" id="courseName" name="courseName" maxlength="255" required>
-            </div>
-            
-            <div class="form-group">
-                <label for="courseDescription">Course Description</label>
-                <textarea id="courseDescription" name="courseDescription" rows="4"></textarea>
-            </div>
-            
-            <div class="form-group">
-                <label for="createdBy">Instructor</label>
-                <select id="createdBy" name="createdBy">
-                    <option value="">Select an instructor</option>
-                </select>
-            </div>
-            
-            <div class="form-group">
-                <label for="createdAt">Created At</label>
-                <input type="text" id="createdAt" name="createdAt" readonly>
-            </div>
-            
-            <div class="form-group">
-                <label for="updatedAt">Last Updated</label>
-                <input type="text" id="updatedAt" name="updatedAt" readonly>
-            </div>
-            
-            <div class="form-actions">
-                <button type="submit" id="saveCourse">Save Course</button>
-                <button type="button" id="deleteSelected">Delete Selected</button>
-                <button type="button" id="deleteAll">Delete All</button>
-            </div>
-        </form>
-        
-        <!-- Saved Courses Section -->
-        <h2>Saved Courses</h2>
-        <div id="courseCards" class="course-cards"></div>
+      <h1>Course Management System</h1>
+
+      <!-- Course Form -->
+      <form id="courseForm">
+        <div class="form-group">
+          <label for="courseId">Course ID (Auto-generated)</label>
+          <input type="text" id="courseId" name="courseId" readonly>
+        </div>
+
+        <div class="form-group">
+          <label for="courseName">Course Name <span class="required">*</span></label>
+          <input type="text" id="courseName" name="courseName" maxlength="255" required>
+        </div>
+
+        <div class="form-group">
+          <label for="courseDescription">Course Description</label>
+          <textarea id="courseDescription" name="courseDescription" rows="4"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="createdBy">Instructor</label>
+          <select id="createdBy" name="createdBy">
+            <option value="">Select an instructor</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="createdAt">Created At</label>
+          <input type="text" id="createdAt" name="createdAt" readonly>
+        </div>
+
+        <div class="form-group">
+          <label for="updatedAt">Last Updated</label>
+          <input type="text" id="updatedAt" name="updatedAt" readonly>
+        </div>
+
+        <div class="form-actions">
+
+          <button type="button" id="deleteSelected">Delete Selected</button>
+          <button type="button" id="deleteAll">Delete All</button>
+          <button type="submit" id="saveCourse">Save Course</button>
+        </div>
+      </form>
+
+      <!-- Saved Courses Section -->
+      <h2>Saved Courses</h2>
+      <div id="courseCards" class="course-cards"></div>
     </div>
 
-    <div class="sidenav">
-        <a href="#lab1"  onclick="window.location.href='lab1.html'">lab 1</a>
-        <a href="#lab2" onclick="window.location.href='lab2.html'">lab 2</a>
-        <a href="#lab3" onclick="window.location.href='lab3.html'">lab 3</a>
-        <a href="#lab4" onclick="window.location.href='lab4.html'">lab 4</a>
-        <a href="#lab5" onclick="window.location.href='lab5.html'">lab 5</a>
-        <a href="#lab6" onclick="window.location.href='lab6.html'">lab 6</a>
-        <a href="#lab7" onclick="window.location.href='lab7.html'">lab 7</a>
-        <a href="#lab8" onclick="window.location.href='lab8.html'">lab 8</a>
-      </div>
+  </div>
 
-    <script src="lab1script.js"></script>
+  <!-- Div cho Design -->
+  <div class="hidden" id="Des">
+    <div class="image-container">
+      <div class="image-box">
+        <img src="images/im3.png" alt="Image 1">
+        <a href="images/im3.png" download="image1.jpg" class="download-button">Download</a>
+      </div>
+      <div class="image-box">
+        <img src="images/im31.png" alt="Image 2">
+        <a href="images/im31.png" download="image2.jpg" class="download-button">Download</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- DIv cho Requi -->
+  <div class="hidden" id="Requi">
+    <div class="cards">
+      <p id="cardText">Design a user interface (UI) for a course management system based on the following database table structure for a Course. Ensure the UI reflects the necessary fields and actions to create, view, and update courses.UI Requirements:: 
+        <br> This field should be auto-generated by the system, so it doesn't need to be editable by the user. Display this value when viewing or editing a course.: Create an input field that allows the user to enter the course name. This field should be required and should accept up to 255 characters.: Include a text area for users to provide a detailed description of the course. This field can be optional but should allow longer text.: Display a dropdown or search functionality that allows users to select the course's instructor from the list of existing users. This field references the created_by field, which is linked to the User table.: Display the timestamp indicating when the course was created. This value should be automatically generated and displayed to the user, but not editable.: Display the last updated timestamp. This value should be automatically updated by the system whenever changes are made to the course and should not be editable by users.:
+        <br>
+        <br>: Provide a button or form submission option to allow users to create a new course with the specified details.
+        <br>: Allow users to modify the course_name, course_description, and created_by fields while showing the auto-generated fields like course_id, created_at, and updated_at in read-only mode.
+        <br>: Include a page or modal for viewing the details of a course without editing it.
+        <br>: Optionally, provide a button to delete a course, ensuring that confirmation prompts are in place before deletion.</p>
+    </div>
+  </div>
+
+  <script src="lab1script.js"></script>
 </body>
+
 </html>

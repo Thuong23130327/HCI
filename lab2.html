@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 2 Login</title>
+    <link rel="stylesheet" href="lab2style.css">
+</head>
+
+<body>
+    <div class="button-main">
+        <button class="btn-req" onclick="showDiv('Requi')">Requirement </button>
+        <button class="btn-des" onclick="showDiv('Des')">Design </button>
+        <button class="btn-imp" onclick="showDiv('login-container')">Implement </button>
+    </div>
+
+    <div>
+        <!-- div cho imple -->
+        <div class="hidden" id="login-container">
+            <div class="login-container">
+                <h2>Login</h2>
+                <form id="loginForm">
+                    <input type="text" id="username" placeholder="Username or Email">
+                    <input type="password" id="password" placeholder="Password">
+                    <button type="button" id="loginButton">Login</button>
+                </form>
+                <a href="#">Forgot Password?</a>
+            </div>
+        </div>
+
+        <!-- Div cho Design -->
+        <div class="hidden" id="Des">
+            <div class="image-container">
+                <div class="image-box">
+                    <img src="images/im3.png" alt="Image 1">
+                    <a href="images/im3.png" download="image1.jpg" class="download-button">Download</a>
+                </div>
+                <div class="image-box">
+                    <img src="images/im31.png" alt="Image 2">
+                    <a href="images/im31.png" download="image2.jpg" class="download-button">Download</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- DIv cho Requi -->
+        <div class="hidden" id="Requi">
+            <div class="cards">
+                <p id="cardText">Students should authenticate before accessing the system.
+                <ul>
+                    <li>
+                        Username/Email
+                    </li>
+                    <li>
+                        Password
+                    </li>
+
+                    <li>Login button</li>
+                    <li>Forgot Password link</li>
+                    <li>Simple, clean, and secure login screen.</li>
+                    <li>After login, students should land on a dashboard that displays available exercises to choose
+                        from.</li>
+                    <li>Display exercises grouped by programming language (C, Python, Java).</li>
+                    <li>Exercise title</li>
+                    <li>Short description</li>
+                    <li>Difficulty level (Easy/Medium/Hard)</li>
+                    <li>Time limit (if any)</li>
+                    <li>Points or grades attached (optional)</li>
+                </ul>
+                <br>
+
+                Allow students to filter exercises by programming language. To search for exercises based on
+                keywords. Indicate whether an exercise has been completed, in progress, or not started.
+                <ul>
+                    <li>Select an exercise
+                    <li>View exercise details
+                    <li>Once an exercise is selected, students are taken to a coding environment to implement their
+                        solution.
+                    <li>Display the exercise title and description at the top.
+                    <li>Syntax highlighting for C, Python, Java</li>
+                    <li>Line numbers and auto-complete</li>
+                    <li>Language switcher (to select the language)</li>
+                    <li>Pre-loaded template (based on the selected language)</li>
+                    <li>Instructions and constraints provided for the exercise</li>
+                    <li>Display predefined test cases with expected input/output</li>
+                    <li>Allow students to create and run their own test cases (optional)</li>
+                    <li>Run Code button to compile and run the code</li>
+                    <li>Clear Code button to reset the editor</li>
+                    <li>Submission button to submit the final solution for grading</li>
+                    <li>Run the code (compile + execute)</li>
+                    <li>Submit the code</li>
+                </ul>
+                <br>
+                After submission, students should see the results of their submission.
+                <ul>
+
+                    <li>Status (Success/Failed/Compilation Error/Time Limit Exceeded)</li>
+                    <li>Output Show actual output versus expected output for each test case.</li>
+                    <li>List all test cases with</li>
+                    <li>Input</li>
+                    <li>Expected output</li>
+                    <li>Actual output</li>
+                    <li>Status (Passed/Failed)</li>
+                    <li>Show score based on test cases passed</li>
+                    <li>If there are multiple test cases, show how many passed</li>
+                    <li>Display performance metrics like time taken and memory used (if applicable).</li>
+                    <li>Try again button to return to the code editor for improvements</li>
+                    <li>Return to dashboard button</li>
+                    <li>Show rankings based on student performance (optional, for competitive environments).</li>
+                    <li>Allow students to leave feedback on exercises or ask for help.</li>
+                    <li>Provide a hint button that can be used a limited number of times.
+                    <li>Allow students to save their progress and return later to complete the exercise.</li>
+                    <li>Code execution should happen in isolated environments (containers or sandboxes) for security
+                        reasons.</li>
+                    <li>Limit execution time to prevent infinite loops.</li>
+                    <li>Store previous attempts so students can review their submissions.</li>
+                    <li>Each screen should have a simple design with minimal distractions.</li>
+                    <li>Ensure the system is mobile-friendly so students can work from any device.</li>
+                    <li>Clearly communicate syntax and runtime errors to students.</li>
+                </ul>
+                </p>
+            </div>
+        </div>
+
+
+        <!-- Thanh các tab labs -->
+        <div class="sidenav">
+            <a href="#lab1" onclick="window.location.href='lab1.html'">Lab 1</a>
+            <a href="#lab2" onclick="window.location.href='lab2.html'">Lab 2</a>
+            <a href="#lab3" onclick="window.location.href='lab3.html'">Lab 3</a>
+            <a href="#lab4" onclick="window.location.href='lab4.html'">Lab 4</a>
+            <a href="#lab5" onclick="window.location.href='lab5.html'">Lab 5</a>
+            <a href="#lab6" onclick="window.location.href='lab6.html'">Lab 6</a>
+            <a href="#home" onclick="window.location.href='index.html'">Home</a>
+        </div>
+        <!-- kết thúc thanh các labs -->
+
+    </div>
+
+    <script src="lab2script.js"></script>
+</body>
+
+</html>

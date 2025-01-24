@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coding Environment</title>
+    <link rel="stylesheet" href="codestyle.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.14/ace.js" defer></script>
+    <script src="codescript.js" defer></script>
+</head>
+
+<body>
+    <div class="coding-container">
+        <header>
+            <h1 id="exercise-title">Exercise Title</h1>
+            <p id="exercise-description">Exercise description will appear here.</p>
+        </header>
+
+        <div class="editor-section">
+            <div class="editor-controls">
+                <label for="language-selector">Language:</label>
+                <select id="language-selector">
+                    <option value="c">C</option>
+                    <option value="python">Python</option>
+                    <option value="java">Java</option>
+                </select>
+                <button id="clear-code">Clear Code</button>
+            </div>
+            <div id="editor">// Write your code here...</div>
+        </div>
+
+        <div class="testcase-section">
+            <h3>Test Cases</h3>
+            <ul id="testcase-list">
+                <!-- Predefined test cases will be loaded here -->
+            </ul>
+            <div class="custom-testcase">
+                <h4>Add Custom Test Case</h4>
+                <textarea id="custom-input" placeholder="Input"></textarea>
+                <textarea id="custom-output" placeholder="Expected Output"></textarea>
+                <button id="add-testcase">Add Test Case</button>
+            </div>
+        </div>
+
+        <div class="action-buttons">
+            <button id="run-code">Run Code</button>
+            <button id="submit-code">Submit Code</button>
+            <button id="back-code" onclick="window.location.href='dashboard.html';">Return Dashboard</button>
+
+        </div>
+
+        <div class="result-section">
+            <h3>Results</h3>
+            <div id="result-output">
+                <!-- Results will be displayed here -->
+            </div>
+        </div>
+
+
+        <!-- Thanh các tab labs -->
+        <div class="sidenav">
+            <a href="#lab1" onclick="window.location.href='lab1.html'">Lab 1</a>
+            <a href="#lab2" onclick="window.location.href='lab2.html'">Lab 2</a>
+            <a href="#lab3" onclick="window.location.href='lab3.html'">Lab 3</a>
+            <a href="#lab4" onclick="window.location.href='lab4.html'">Lab 4</a>
+            <a href="#lab5" onclick="window.location.href='lab5.html'">Lab 5</a>
+            <a href="#lab6" onclick="window.location.href='lab6.html'">Lab 6</a>
+            <a href="#home" onclick="window.location.href='index.html'">Home</a>
+        </div>
+        <!-- kết thúc thanh các labs -->
+    </div>
+</body>
+
+</html>

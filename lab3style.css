@@ -1,0 +1,641 @@
+/* Body settings */
+body,
+html {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Header */
+h1 {
+  text-align: center;
+  margin-top: 20px;
+  color: #4CAF50;
+  /* Màu xanh nổi bật */
+}
+
+/* Container for cards */
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 20px;
+  background-color: #fff;
+}
+
+.back-button:hover {
+  background-color: #d8d7d7;
+  transition: background-color 0.3s, transform 0.3s;
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgb(207, 207, 208);
+}
+
+.back-button {
+  margin-top: 2%;
+  border-radius: 20px;
+  width: 30%;
+  align-self: self-end;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card i {
+  font-size: 50px;
+  color: #4CAF50;
+  /* Icon màu xanh nổi bật */
+}
+
+.card h3 {
+  margin: 15px 0;
+}
+
+.card button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.card button:hover {
+  background-color: #45a049;
+}
+
+.popup {
+  position: fixed;
+  top: 15%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  /* Ẩn mặc định */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-content {
+  background: #fff;
+  width: 90%;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.popup-body {
+  display: flex;
+  height: 100%;
+}
+
+.lesson-nav {
+  width: 25%;
+  /* Chiếm 25% chiều rộng */
+  background: #f8f8f8;
+  /* Màu nền sáng */
+  padding: 20px;
+  /* Khoảng cách bên trong */
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  /* Hiệu ứng bóng nhẹ */
+  overflow-y: auto;
+  /* Cuộn khi nội dung dài hơn chiều cao */
+  border-right: 1px solid #ddd;
+  /* Đường viền phân cách */
+}
+
+.lesson-nav-title {
+  font-size: 18px;
+  /* Cỡ chữ tiêu đề */
+  font-weight: bold;
+  /* Chữ đậm */
+  margin-bottom: 20px;
+  /* Khoảng cách phía dưới */
+  text-align: center;
+  /* Canh giữa tiêu đề */
+  color: #333;
+  /* Màu chữ */
+}
+
+.lesson-list {
+  list-style: none;
+  /* Bỏ ký hiệu danh sách */
+  padding: 0;
+  /* Xóa padding mặc định */
+  margin: 0;
+  /* Xóa margin mặc định */
+}
+
+.lesson-item {
+  padding: 10px 15px;
+  /* Khoảng cách bên trong */
+  cursor: pointer;
+  /* Hiệu ứng con trỏ */
+  border-bottom: 1px solid #ddd;
+  /* Đường gạch ngang giữa các mục */
+  transition: background-color 0.3s, color 0.3s;
+  /* Hiệu ứng khi hover */
+  color: #333;
+  /* Màu chữ mặc định */
+}
+
+.lesson-item.active {
+  background: #007bff;
+  /* Nền xanh khi được chọn */
+  color: #fff;
+  /* Màu chữ trắng */
+  font-weight: bold;
+  /* Đậm chữ */
+}
+
+.lesson-item:hover {
+  background: #e9ecef;
+  /* Màu nền sáng hơn khi hover */
+  color: #000;
+  /* Màu chữ khi hover */
+}
+
+.lesson-item:last-child {
+  border-bottom: none;
+  /* Bỏ đường viền dưới cùng */
+}
+
+
+.content {
+  width: 75%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.close-button {
+  margin-top: 10px;
+  align-self: center;
+  padding: 10px 20px;
+  background: #dc3545;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 20px;
+  height: 10px;
+}
+
+.close-button:hover {
+  background: #b02a37;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 20px;
+  color: #333;
+}
+
+.container {
+  display: flex;
+  /* Sử dụng flexbox để căn giữa các card */
+  flex-wrap: wrap;
+  /* Cho phép card xuống hàng nếu không đủ chỗ */
+  justify-content: center;
+  /* Căn giữa các card trong không gian */
+  gap: 15px;
+  /* Khoảng cách giữa các card */
+  padding: 20px;
+  max-width: 1000px;
+  /* Chiều rộng tối đa của container */
+  margin: 0 auto;
+  /* Căn giữa container trong màn hình */
+}
+
+.card {
+  top: 15%;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 220px;
+  /* Chiều rộng card */
+  height: 220px;
+  /* Chiều cao card */
+  padding: 20px;
+  /* Padding bên trong card */
+  display: flex;
+  /* Sử dụng flexbox để căn giữa nội dung */
+  flex-direction: column;
+  /* Xếp theo cột */
+  justify-content: center;
+  /* Căn giữa theo chiều dọc */
+  align-items: center;
+  /* Căn giữa theo chiều ngang */
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  /* Thêm hiệu ứng chuyển đổi */
+}
+
+/* Animation cho hover */
+@keyframes hoverEffect {
+  0% {
+    transform: scale(1);
+    /* Kích thước ban đầu */
+  }
+
+  50% {
+    transform: scale(1.05);
+    /* Tăng kích thước 5% */
+  }
+
+  100% {
+    transform: scale(1);
+    /* Trở về kích thước ban đầu */
+  }
+}
+
+.card:hover {
+  transform: scale(1.05);
+
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+
+}
+
+.card i {
+  font-size: 50px;
+  /* Kích thước icon */
+  color: #007BFF;
+  /* Màu icon */
+  margin-bottom: 10px;
+  /* Khoảng cách dưới icon */
+}
+
+.card h3 {
+  font-size: 20px;
+  /* Kích thước tiêu đề */
+  color: #333;
+  margin: 10px 0;
+  /* Khoảng cách trên và dưới tiêu đề */
+}
+
+.card button {
+  background-color: transparent;
+  /* Đặt màu nền trong suốt */
+  color: #007BFF;
+  /* Màu chữ xanh */
+  border: 2px solid #007BFF;
+  /* Đặt viền màu xanh */
+  padding: 10px 15px;
+  /* Padding của button */
+  border-radius: 5px;
+  /* Đường viền bo tròn */
+  cursor: pointer;
+  /* Thay đổi con trỏ khi hover */
+  margin-top: 10px;
+  /* Khoảng cách trên nút */
+  transition: background-color 0.3s, color 0.3s;
+  /* Hiệu ứng chuyển đổi màu nền và chữ */
+}
+
+.card button:hover {
+  background-color: #007BFF;
+  /* Màu nền của nút khi hover */
+  color: white;
+  /* Màu chữ trắng khi hover */
+}
+
+/* Popup styles */
+.popup {
+  display: none;
+  /* Ẩn popup ban đầu */
+  position: fixed;
+  /* Đặt popup cố định */
+  z-index: 1000;
+  /* Đảm bảo popup nằm trên các phần khác */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Độ rộng 100% */
+  height: 100%;
+  /* Độ cao 100% */
+  overflow: auto;
+  /* Thêm cuộn nếu cần */
+  background-color: rgba(0, 0, 0, 0.5);
+  /* Màu nền nửa trong suốt */
+}
+
+.popup-content {
+  background-color: white;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 600px;
+  /* Kích thước chiều rộng */
+  height: 500px;
+  /* Kích thước chiều cao */
+  position: relative;
+  border-radius: 8px;
+  /* Bo góc popup */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  /* Đổ bóng cho popup */
+  top: 50%;
+  /* Đặt vị trí top */
+  transform: translateY(-50%);
+  /* Dịch chuyển để căn giữa */
+}
+
+
+.popup-content {
+  background-color: white;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+
+  height: 600px;
+  height: 80%;
+  /* Kích thước chiều rộng lớn hơn */
+  width: 80%;
+  /* Kích thước chiều rộng tối đa */
+  max-width: 900px;
+
+  position: relative;
+  border-radius: 10px;
+  /* Bo góc popup */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  /* Đổ bóng cho popup */
+}
+
+
+.close {
+  color: #aaa;
+  /* Màu cho nút đóng */
+  float: right;
+  /* Căn bên phải */
+  font-size: 28px;
+  /* Kích thước chữ */
+  font-weight: bold;
+  /* Đậm */
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  /* Màu khi hover */
+  text-decoration: none;
+  /* Không gạch chân */
+  cursor: pointer;
+  /* Đổi con trỏ khi hover */
+}
+
+/* Đảm bảo việc bố trí thẻ vẫn đẹp trên các màn hình nhỏ */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    /* Chuyển thành cột trên màn hình nhỏ */
+    align-items: center;
+    /* Căn giữa các card */
+  }
+}
+
+/* Đảm bảo card luôn nằm giữa và chia đều */
+@media (min-width: 768px) {
+  .card-container {
+    display: flex;
+    justify-content: center;
+    /* Căn giữa các card */
+    flex-wrap: wrap;
+    /* Để các card xuống hàng nếu không đủ chỗ */
+    margin: 0 auto;
+    /* Giúp container nằm giữa màn hình */
+    padding: 20px;
+    /* Padding cho container */
+    gap: 15px;
+    /* Khoảng cách giữa các card */
+  }
+}
+
+@media (max-width: 767px) {
+  .card {
+    flex: 1 0 calc(50% - 10px);
+    /* Mỗi card chiếm 50% chiều rộng */
+    margin-bottom: 15px;
+    /* Khoảng cách giữa các hàng */
+  }
+}
+
+.dropbtn {
+  background-color: mediumseagreen;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
+}
+
+
+
+.sidenav {
+  z-index: 1000;
+  /* High z-index to keep it above other elements */
+  position: fixed;
+  /* Giữ cho thanh này ở một vị trí cố định khi cuộn */
+  right: 0;
+  /* Canh phải */
+  top: 160px;
+  /* Bắt đầu từ phía trên */
+
+  /* Độ rộng của thanh */
+  /* Chiều cao của thanh */
+  background-color: #e9e9e9;
+  /* Màu nền */
+  color: #fff;
+  /* Màu chữ */
+  padding: 10px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+
+  overflow-x: hidden;
+  padding: 6px 0;
+}
+
+.sidenav a {
+  padding: 4px 5px 4px 10px;
+  text-decoration: none;
+  font-size: 18px;
+  color: #2196F3;
+  display: block;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.sidenav a:hover {
+  color: #064579;
+  transform: scale(1.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+}
+
+.main {
+  margin-left: 140px;
+  /* Same width as the sidebar + left position in px */
+  font-size: 28px;
+  /* Increased text to enable scrolling */
+  padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {
+      padding-top: 15px;
+  }
+
+  .sidenav a {
+      font-size: 18px;
+  }
+}
+/* Bắt đầu css cho btn */
+.active {
+  display: block;
+}
+
+.hidden {
+  display: none;
+}
+
+
+.button-main button {
+  border-radius: 8px;
+  background-color: rgb(228, 228, 228);
+  outline: none;
+  border: none;
+  padding: 8px;
+  font-size: 12px;
+  cursor: pointer;
+  color: #2196F3;
+}
+
+.button-main {
+  padding-top: 1%;
+  justify-content: center;
+  display: flex;
+  gap: 10px;
+  /* Khoảng cách giữa các nút */
+}
+
+.button-main button:active {
+  background-color: #3e8e41;
+}
+
+.button-main button:hover {
+  background-color: #2196F3;
+  color: white;
+  transition: background-color 0.3s, color 0.3s, transform 0.3s;
+  transform: scale(1.1);
+  box-shadow: 0 6px 12px rgb(207, 207, 208);
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.image-box {
+  text-align: center;
+}
+
+.image-box img {
+  width: 100%;
+  height: 100%;
+  max-width: 500px;
+  max-height: 300px;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto 10px;
+}
+
+.download-button {
+  display: inline-block;
+  padding: 6px 8px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 10px;
+  font-size: 14px;
+}
+
+.download-button:hover {
+  background-color: #3ea8ff;
+  color: white;
+  transition: background-color 0.3s, color 0.3s, transform 0.3s;
+  transform: scale(1.1);
+  box-shadow: 0 6px 12px rgb(207, 207, 208);
+}
+
+
+.cards {
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  max-width: 900px;
+  width: auto;
+  height: auto;
+  margin: 0 auto;
+}
+
+#Requi {
+  padding-top: 2%;
+}
+
+#cardText {
+  font-size: 15px;
+  color: #1c201f;
+}

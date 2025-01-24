@@ -977,7 +977,7 @@ img {
   /* Canh phải */
   top: 160px;
   /* Bắt đầu từ phía trên */
-  
+
   /* Độ rộng của thanh */
   /* Chiều cao của thanh */
   background-color: #e9e9e9;
@@ -1022,4 +1022,108 @@ img {
   .sidenav a {
     font-size: 18px;
   }
+}
+
+/* Bắt đầu css cho btn */
+.active {
+  display: block;
+}
+
+.hidden {
+  display: none;
+}
+
+
+.button-main button {
+  border-radius: 8px;
+  background-color: rgb(228, 228, 228);
+  outline: none;
+  border: none;
+  padding: 8px;
+  font-size: 12px;
+  cursor: pointer;
+  color: #2196F3;
+}
+
+.button-main {
+  padding-top: 2%;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  display: flex;
+  gap: 10px;
+  /* Khoảng cách giữa các nút */
+}
+
+.button-main button:active {
+  background-color: #3e8e41;
+}
+
+.button-main button:hover {
+  background-color: #2196F3;
+  color: white;
+  transition: background-color 0.3s, color 0.3s, transform 0.3s;
+  transform: scale(1.1);
+  box-shadow: 0 6px 12px rgb(207, 207, 208);
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.image-box {
+  text-align: center;
+}
+
+.image-box img {
+  width: 100%;
+  height: 100%;
+  max-width: 500px;
+  max-height: 300px;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto 10px;
+}
+
+.download-button {
+  display: inline-block;
+  padding: 6px 8px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 10px;
+  font-size: 14px;
+}
+
+.download-button:hover {
+  background-color: #3ea8ff;
+  color: white;
+  transition: background-color 0.3s, color 0.3s, transform 0.3s;
+  transform: scale(1.1);
+  box-shadow: 0 6px 12px rgb(207, 207, 208);
+}
+
+
+.cards {
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  max-width: 900px;
+  width: auto;
+  height: auto;
+  margin: 0 auto;
+}
+
+#Requi{
+  padding-top: 2%;
+}
+
+#cardText {
+  font-size: 15px;
+  color: #1c201f;
 }

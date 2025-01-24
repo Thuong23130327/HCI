@@ -1,0 +1,232 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+}
+
+.coding-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 24px;
+    color: #333;
+}
+
+header p {
+    font-size: 16px;
+    color: #666;
+}
+
+.editor-section {
+    margin-bottom: 20px;
+}
+
+.editor-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.editor-controls label {
+    font-size: 14px;
+}
+
+.editor-controls select,
+.editor-controls button {
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background: #f8f9fa;
+    cursor: pointer;
+}
+
+.editor-controls button:hover {
+    background: #e2e6ea;
+}
+
+#editor {
+    height: 300px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.testcase-section {
+    margin-bottom: 20px;
+}
+
+.testcase-section h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+#testcase-list {
+    list-style: none;
+    padding: 0;
+}
+
+#testcase-list li {
+    background: #f8f9fa;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.custom-testcase h4 {
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+textarea {
+    width: 100%;
+    height: 80px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    font-family: monospace;
+}
+
+.action-buttons {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.action-buttons button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    margin: 0 10px;
+    color: white;
+    cursor: pointer;
+}
+
+#submit-code {
+
+    background-color: #007bff;
+}
+#run-code {
+    background-color: #28A745;
+
+}
+#back-code {
+    background-color: #adaaaa;
+}
+
+
+#run-code:hover {
+    background-color: #3cc95d;
+    transform: scale(1.1);
+}
+#back-code:hover {
+    background-color: #888585;
+    transform: scale(1.1);
+}
+#submit-code:hover {
+    background-color: #22a3f9;
+    transform: scale(1.1);
+}
+
+
+
+.action-buttons button:hover {
+    background-color: #22303e;
+}
+
+.result-section {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.result-section h3 {
+    margin-bottom: 10px;
+}
+
+.custom-testcase {
+    width: calc(100% - 20px);
+    /* Điều chỉnh độ rộng để căn đều với padding */
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+
+}
+
+#result-output {
+    font-family: monospace;
+    white-space: pre-wrap;
+    background: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+
+.sidenav {
+    position: fixed;
+    /* Giữ cho thanh này ở một vị trí cố định khi cuộn */
+    right: 0;
+    /* Canh phải */
+    top: 160px;
+    /* Bắt đầu từ phía trên */
+
+    /* Độ rộng của thanh */
+    /* Chiều cao của thanh */
+    background-color: #e9e9e9;
+    /* Màu nền */
+    color: #fff;
+    /* Màu chữ */
+    padding: 20px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+
+    overflow-x: hidden;
+    padding: 8px 0;
+}
+
+.sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #2196F3;
+    display: block;
+    font-size: 25px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.sidenav a:hover {
+    color: #064579;
+}
+
+.main {
+    margin-left: 140px;
+    /* Same width as the sidebar + left position in px */
+    font-size: 28px;
+    /* Increased text to enable scrolling */
+    padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+
+    .sidenav a {
+        font-size: 18px;
+    }
+}

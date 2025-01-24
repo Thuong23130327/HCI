@@ -42,13 +42,13 @@ document.addEventListener("DOMContentLoaded", () => {
             <h3>${courseName}</h3>
             <p><strong>Description:</strong> ${courseDescription || "N/A"}</p>
             <p><strong>Instructor:</strong> ${createdBy}</p>
+            <p><strong>Course:</strong> ${courseId}</p>
             <p><strong>Created At:</strong> ${createdAt}</p>
             <p><strong>Updated At:</strong> ${updatedAt}</p>
         `;
 
         courseCardsContainer.appendChild(courseCard);
 
-        alert("Course saved successfully!");
     });
 
     // Handle delete selected
@@ -64,14 +64,32 @@ document.addEventListener("DOMContentLoaded", () => {
             card.remove();
         });
 
-        alert("Selected courses deleted successfully!");
     });
 
     // Handle delete all
     document.getElementById("deleteAll").addEventListener("click", () => {
-        if (confirm("Are you sure you want to delete all courses?")) {
-            courseCardsContainer.innerHTML = "";
-            alert("All courses deleted successfully!");
-        }
+        courseCardsContainer.innerHTML = "";
     });
 });
+
+function showDiv(divId) {
+    // Ẩn tất cả các div
+    document.querySelectorAll('div[id]').forEach(div => {
+        div.classList.remove('active');
+        div.classList.add('hidden');
+    });
+
+    // Hiển thị div được chọn
+    const activeDiv = document.getElementById(divId);
+    if (activeDiv) {
+        activeDiv.classList.remove('hidden');
+        activeDiv.classList.add('active');
+    }
+    // Loại bỏ class active khỏi tất cả các nút
+    document.querySelectorAll('.toggle-button').forEach(btn => {
+        btn.classList.remove('active');
+    });
+
+    // Thêm class active vào nút được nhấn
+    button.classList.add('active');
+}

@@ -28,6 +28,12 @@ body {
     margin-right: 20px;
 }
 
+.header_section1 a:hover{
+    font-weight: bold;
+    translate: transform 0.3s;
+    transform: scale(1.01);
+}
+
 .header_section1 .user-actions a {
     margin-left: 15px;
 }
@@ -57,14 +63,57 @@ main {
 .video-container iframe {
     border-radius: 8px;
     width: 100%;
-    height: 500px; /* Đặt chiều cao video thành 500px */
+    height: 450pxpx;
+}
+
+
+/* Đặt chiều cao video thành 500px */
+.course-content {
+    position: relative;
+    padding-right: 30px;
+    /* Tạo khoảng trống cho icon */
+    cursor: pointer;
+    /* Thêm con trỏ pointer khi hover */
+}
+
+
+.content-list li::before {
+    content: "⬜";
+    /* Thêm biểu tượng ô vuông rỗng */
+    margin-right: 8px;
+    /* Tạo khoảng cách giữa ô vuông và nội dung */
+}
+
+.course-content h3 {
+    font-weight: bold;
+    font-size: medium;
+    display: flex;
+    justify-content: space-between;
+    /* Đảm bảo icon và văn bản căn đều hai bên */
+    align-items: center;
+    /* Căn giữa theo chiều dọc */
+}
+
+.course-content li{
+    font-size: small;
+}
+
+.arrow-icon {
+    position: absolute;
+    right: 10px;
+    /* Căn icon về phía bên phải */
+    top: 50%;
+    transform: translateY(-50%) rotate(0deg);
+    /* Cố định icon ở giữa theo chiều dọc và xoay */
+    transition: transform 0.3s ease;
+    /* Thêm hiệu ứng xoay */
 }
 
 .course-details {
     background-color: white;
     padding: 20px;
     border-radius: 8px;
-    margin-top: 20px;
+    margin-top: 2%px;
 }
 
 .course-details h2 {
@@ -84,24 +133,18 @@ main {
     font-size: 0.9rem;
 }
 
-.learning-outcomes h3 {
-    margin-bottom: 10px;
-}
-
-.learning-outcomes ul {
-    list-style: disc;
-    margin-left: 20px;
-}
 
 /* Right side: Course content list */
 .right-side {
     width: 30%;
 }
-
+.sym{
+    margin-left: 4%;
+    margin-right: 10%;
+}
 .course-content {
     background-color: #f1f1f1;
     padding: 20px;
-    border-radius: 8px;
 }
 
 .course-content h3 {
@@ -116,29 +159,35 @@ main {
     padding: 8px 0;
     border-bottom: 1px solid #ccc;
 }
+
 /* lab4style.css */
 
 .nav-link {
-    display: inline-block; /* Đảm bảo các liên kết hiển thị ngang hàng */
-    padding: 5px; /* Tạo khoảng cách xung quanh */
+    display: inline-block;
+    /* Đảm bảo các liên kết hiển thị ngang hàng */
+    padding: 5px;
+    /* Tạo khoảng cách xung quanh */
 }
 
 .separator {
     display: inline-block;
-    margin: 0 5px; /* Khoảng cách 5px hai bên thanh phân cách */
+    margin: 0 5px;
+    /* Khoảng cách 5px hai bên thanh phân cách */
 }
 
 .nav-link:first-child {
-    margin-right: auto; /* Căn liên kết đầu tiên sang phải */
+    margin-right: auto;
+    /* Căn liên kết đầu tiên sang phải */
 }
 
 .nav-link:last-child {
-    margin-left: auto; /* Căn liên kết cuối cùng sang trái */
+    margin-left: auto;
+    /* Căn liên kết cuối cùng sang trái */
 }
 
-
 .video-container {
-    position: relative; /* Để đặt thanh tab lên trên video */
+    position: relative;
+    /* Để đặt thanh tab lên trên video */
 }
 
 .tab-bar {
@@ -149,14 +198,50 @@ main {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: #f0f0f0; /* Màu nền thanh tab */
-    padding: 10px;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    padding: 8px;
+    overflow-x: auto;
+    white-space: nowrap;
 }
 
 .tab-bar span {
-    padding: 5px 10px;
+    display: inline-block;
+    padding: 10px 15px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
     cursor: pointer;
-    border-radius: 8px;
+}
+
+.tab-bar span:hover {
+    translate: transform 0.3s, color 0.3s;
+    transform: scale(1.1);
+    color: #2196F3;
+}
+
+/* Điều chỉnh kích thước chữ cho toàn bộ trang web khi màn hình nhỏ hơn 800px */
+@media (max-width: 800px) {
+    html {
+        font-size: 14px;
+        /* Kích thước chữ nhỏ hơn */
+    }
+}
+
+/* Điều chỉnh kích thước chữ cho toàn bộ trang web khi màn hình nhỏ hơn 600px */
+@media (max-width: 600px) {
+    html {
+        font-size: 12px;
+        /* Kích thước chữ nhỏ hơn */
+    }
+}
+
+/* Điều chỉnh kích thước chữ cho toàn bộ trang web khi màn hình nhỏ hơn 400px */
+@media (max-width: 400px) {
+    html {
+        font-size: 10px;
+        /* Kích thước chữ nhỏ hơn nữa */
+    }
 }
 
 .course-title {
@@ -164,7 +249,8 @@ main {
     font-weight: bold;
     color: #333;
     text-align: center;
-    margin-top: 20px; /* Khoảng cách từ thanh tab */
+    margin-top: 20px;
+    /* Khoảng cách từ thanh tab */
 }
 
 .course-info {
@@ -178,3 +264,133 @@ main {
     color: #666;
 }
 
+.learning-outcomes {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    border: 2px solid black;
+    padding: 20px;
+    border-radius: 5px;
+}
+.learning-outcomes h3 {
+    color: #2C3E50;
+}
+.learning-outcomes ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+.learning-outcomes li {
+    margin: 10px;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    flex: 1 0 45%;
+    display: flex;
+    align-items: center;
+}
+.learning-outcomes li::before {
+    content: '✔';
+    color: #2196F3;
+    margin-right: 10px;
+}
+
+/* Bắt đầu css cho btn */
+.active {
+    display: block;
+}
+
+.hidden {
+    display: none;
+}
+
+.button-main button {
+    border-radius: 8px;
+    background-color: rgb(228, 228, 228);
+    outline: none;
+    border: none;
+    padding: 8px;
+    font-size: 12px;
+    cursor: pointer;
+    color: #2196F3;
+}
+
+.button-main {
+    padding-top: 1%;
+    padding-bottom: 1%;
+    justify-content: center;
+    display: flex;
+    gap: 10px;
+    /* Khoảng cách giữa các nút */
+}
+
+.button-main button:active {
+    background-color: #3e8e41;
+}
+
+.button-main button:hover {
+    background-color: #2196F3;
+    color: white;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s;
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgb(207, 207, 208);
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.image-box {
+    text-align: center;
+}
+
+.image-box img {
+    width: 100%;
+    height: 100%;
+    max-width: 500px;
+    max-height: 300px;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto 10px;
+}
+
+.download-button {
+    display: inline-block;
+    padding: 6px 8px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    font-size: 14px;
+}
+
+.download-button:hover {
+    background-color: #3ea8ff;
+    color: white;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s;
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgb(207, 207, 208);
+}
+
+.cards {
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    max-width: 900px;
+    width: auto;
+    height: auto;
+    margin: 0 auto;
+}
+
+#Requi {
+    padding-top: 2%;
+}
+
+#cardText {
+    font-size: 15px;
+    color: #1c201f;
+}

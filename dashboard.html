@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="dashboardstyle.css">
+    <style>
+        /* Bắt đầu css cho btn */
+        .active {
+            display: block;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+
+        .button-main a {
+            text-decoration: none;
+            border-radius: 8px;
+            background-color: rgb(228, 228, 228);
+            outline: none;
+            border: none;
+            padding: 8px;
+            font-size: 12px;
+            cursor: pointer;
+            color: #2196F3;
+        }
+
+        .button-main {
+            padding-top: 2%;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            display: flex;
+            gap: 10px;
+            /* Khoảng cách giữa các nút */
+        }
+
+        .button-main a:active {
+            background-color: #3e8e41;
+        }
+
+        .button-main a:hover {
+            background-color: #2196F3;
+            color: white;
+            transition: background-color 0.3s, color 0.3s, transform 0.3s;
+            transform: scale(1.1);
+            box-shadow: 0 6px 12px rgb(207, 207, 208);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="button-main">
+        <a class="btn-req" href="lab2.html">Requirement </a>
+        <a class="btn-des" href="lab2.html">Design </a>
+        <a class="btn-imp" href="lab2.html">Implement </a>
+    </div>
+
+    <div class="dashboard-container">
+        <header class="header">
+            <h1>Welcome to the Dashboard</h1>
+            <p>Choose an exercise and start coding!</p>
+        </header>
+        <div class="filters">
+            <label for="languageFilter">Filter by Language:</label>
+            <select id="languageFilter">
+                <option value="all">All</option>
+                <option value="c">C</option>
+                <option value="python">Python</option>
+                <option value="java">Java</option>
+            </select>
+            <input type="text" id="searchBox" placeholder="Search exercises...">
+        </div>
+        <div class="exercise-list">
+            <!-- Example Exercise Items -->
+            <div class="exercise-item" data-language="python" data-status="not-started">
+                <h3>Exercise 1: Fibonacci Sequence</h3>
+                <p><strong>Language:</strong> Python</p>
+                <p><strong>Difficulty:</strong> Medium</p>
+                <p><strong>Time Limit:</strong> 2 minutes</p>
+                <p><strong>Status:</strong> Not Started</p>
+                <button class="start-btn" onclick="startExercise('1', 'Python')">Start Exercise</button>
+            </div>
+            <div class="exercise-item" data-language="java" data-status="in-progress">
+                <h3>Exercise 2: Palindrome Checker</h3>
+                <p><strong>Language:</strong> Java</p>
+                <p><strong>Difficulty:</strong> Easy</p>
+                <p><strong>Time Limit:</strong> 1 minute</p>
+                <p><strong>Status:</strong> In Progress</p>
+                <button class="start-btn" onclick="startExercise('2', 'Java')">Resume Exercise</button>
+            </div>
+            <div class="exercise-item" data-language="c" data-status="completed">
+                <h3>Exercise 3: Array Reversal</h3>
+                <p><strong>Language:</strong> C</p>
+                <p><strong>Difficulty:</strong> Hard</p>
+                <p><strong>Time Limit:</strong> 3 minutes</p>
+                <p><strong>Status:</strong> Completed</p>
+                <button class="start-btn" onclick="reviewExercise('3')">View Submission</button>
+            </div>
+
+        </div>
+
+
+        <!-- Thanh các tab labs -->
+        <div class="sidenav">
+            <a href="#lab1" onclick="window.location.href='lab1.html'">Lab 1</a>
+            <a href="#lab2" onclick="window.location.href='lab2.html'">Lab 2</a>
+            <a href="#lab3" onclick="window.location.href='lab3.html'">Lab 3</a>
+            <a href="#lab4" onclick="window.location.href='lab4.html'">Lab 4</a>
+            <a href="#lab5" onclick="window.location.href='lab5.html'">Lab 5</a>
+            <a href="#lab6" onclick="window.location.href='lab6.html'">Lab 6</a>
+            <a href="#home" onclick="window.location.href='index.html'">Home</a>
+        </div>
+        <!-- kết thúc thanh các labs -->
+
+    </div>
+    <script src="dashboardscript.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson Viewer</title>
+  <link rel="stylesheet" href="lab3inside.css">
+  <script src="lab3inside.js" defer></script>
+</head>
+<body>
+  <div class="lesson-container">
+    <!-- Sidebar (Danh sách bài học) -->
+    <div class="sidebar">
+      <h3>Lessons</h3>
+      <ul id="lesson-list">
+        <li onclick="viewLesson('lesson1.pdf')">1. Introduction</li>
+        <li onclick="viewLesson('lesson2.pdf')">2. Setting Up the Development Environment</li>
+        <li onclick="viewLesson('lesson3.pdf')">3. Django Basic</li>
+        <li onclick="viewLesson('lesson4.pdf')">4. Django Advanced Concepts</li>
+        <li onclick="viewLesson('lesson9.pdf')">9. PythonAnywhere</li>
+        <li onclick="viewLesson('syllabus.pdf')">Syllabus</li>
+      </ul>
+    </div>
+
+    <!-- Content (Nội dung bài học) -->
+    <div class="content">
+      <h2 id="lesson-title">Lesson Content</h2>
+      <iframe id="lesson-viewer" style="width: 100%; height: 500px;" frameborder="0"></iframe>
+      <button class="back-btn" id="back-btn">Back to list</button>    </div>
+  </div>
+</body>
+</html>
