@@ -435,7 +435,14 @@ h1 .highlight {
     font-size: 15px;
     color: #1c201f;
 }
-
+.button-main .highlight{
+    background-color: #2196F3;
+    color: white;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s;
+    transform: scale(1.02);
+    box-shadow: 0 6px 12px rgb(207, 207, 208);
+    
+}
 
 .sidenav {
     z-index: 1000;

@@ -3,24 +3,25 @@ document.getElementById('loginButton').addEventListener('click', function() {
     window.location.href = '/dashboard.html';
 });
 
-function showDiv(divId) {
+function showDiv(divId, button) {
     // Ẩn tất cả các div
-    document.querySelectorAll('div[id]').forEach(div => {
-        div.classList.remove('active');
+    var divs = document.querySelectorAll('div[id]');
+    divs.forEach(function(div) {
         div.classList.add('hidden');
+        div.classList.remove('visible');
     });
-
+    
     // Hiển thị div được chọn
-    const activeDiv = document.getElementById(divId);
-    if (activeDiv) {
-        activeDiv.classList.remove('hidden');
-        activeDiv.classList.add('active');
-    }
-    // Loại bỏ class active khỏi tất cả các nút
-    document.querySelectorAll('.toggle-button').forEach(btn => {
-        btn.classList.remove('active');
-    });
+    var divToShow = document.getElementById(divId);
+    divToShow.classList.add('visible');
+    divToShow.classList.remove('hidden');
 
-    // Thêm class active vào nút được nhấn
-    button.classList.add('active');
+    // Loại bỏ lớp highlight từ tất cả các nút
+    var buttons = document.querySelectorAll('button');
+    buttons.forEach(function(btn) {
+        btn.classList.remove('highlight');
+    });
+    
+    // Thêm lớp highlight vào nút được nhấn
+    button.classList.add('highlight');
 }

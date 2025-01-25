@@ -480,7 +480,6 @@ h1 {
 }
 
 
-
 .sidenav {
   z-index: 1000;
   /* High z-index to keep it above other elements */
@@ -500,7 +499,7 @@ h1 {
   padding: 10px;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
-
+  line-height: 20px;
   overflow-x: hidden;
   padding: 6px 0;
 }
@@ -521,6 +520,7 @@ h1 {
 
 }
 
+
 .main {
   margin-left: 140px;
   /* Same width as the sidebar + left position in px */
@@ -537,6 +537,14 @@ h1 {
   .sidenav a {
       font-size: 18px;
   }
+}
+.button-main .highlight{
+  background-color: #2196F3;
+  color: white;
+  transition: background-color 0.3s, color 0.3s, transform 0.3s;
+  transform: scale(1.02);
+  box-shadow: 0 6px 12px rgb(207, 207, 208);
+  
 }
 /* Bắt đầu css cho btn */
 .active {

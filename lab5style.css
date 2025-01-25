@@ -52,14 +52,18 @@ body {
 
 .sort-filter button {
     border-radius: 10px;
+    color: black;
+    font-size: 12px;
 }
 
 .search input {
-    border-radius: 10px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
 }
 
 .search button {
-    border-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 
 /* Navbar Styling */
@@ -97,6 +101,7 @@ body {
     display: flex;
     justify-content: space-between;
     padding: 10px 20px;
+    border-radius: 10px;
     background-color: #f0f0f0;
     align-items: center;
 }
@@ -313,9 +318,10 @@ body {
 .bi-caret-right-fill.rotate {
     transform: rotate(90deg);
 }
+
 #certifications {
     position: absolute;
-    top: 83%;
+    top: 73%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
@@ -654,9 +660,19 @@ nav {
         font-size: 18px;
     }
 }
+
 /* Bắt đầu css cho btn */
 .active {
     display: block;
+}
+
+.button-main .highlight {
+    background-color: #2196F3;
+    color: white;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s;
+    transform: scale(1.02);
+    box-shadow: 0 6px 12px rgb(207, 207, 208);
+
 }
 
 .hidden {

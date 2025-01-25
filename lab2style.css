@@ -113,6 +113,8 @@ body {
         font-size: 18px;
     }
 }
+
+
 /* Bắt đầu css cho btn */
 .active {
     display: block;
@@ -145,7 +147,14 @@ body {
 .button-main button:active {
     background-color: #3e8e41;
 }
-
+.button-main .highlight{
+    background-color: #2196F3;
+    color: white;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s;
+    transform: scale(1.02);
+    box-shadow: 0 6px 12px rgb(207, 207, 208);
+    
+}
 .button-main button:hover {
     background-color: #2196F3;
     color: white;

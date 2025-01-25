@@ -50,14 +50,20 @@
             transform: scale(1.1);
             box-shadow: 0 6px 12px rgb(207, 207, 208);
         }
+        
+    .highlight {
+      font-weight: bolder;
+      transform: scale(1.1);
+      }
     </style>
 </head>
 
 <body>
+
     <div class="button-main">
         <a class="btn-req" href="lab2.html">Requirement </a>
         <a class="btn-des" href="lab2.html">Design </a>
-        <a class="btn-imp" href="lab2.html">Implement </a>
+        <a class="btn-imp highlight" href="lab2.html">Implement </a>
     </div>
 
     <div class="dashboard-container">
@@ -108,7 +114,7 @@
         <!-- Thanh các tab labs -->
         <div class="sidenav">
             <a href="#lab1" onclick="window.location.href='lab1.html'">Lab 1</a>
-            <a href="#lab2" onclick="window.location.href='lab2.html'">Lab 2</a>
+            <a href="#lab2" class="highlight" onclick="window.location.href='lab2.html'">Lab 2</a>
             <a href="#lab3" onclick="window.location.href='lab3.html'">Lab 3</a>
             <a href="#lab4" onclick="window.location.href='lab4.html'">Lab 4</a>
             <a href="#lab5" onclick="window.location.href='lab5.html'">Lab 5</a>

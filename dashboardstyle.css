@@ -59,6 +59,8 @@ body {
 
 
 .sidenav {
+    z-index: 1000;
+    /* High z-index to keep it above other elements */
     position: fixed;
     /* Giữ cho thanh này ở một vị trí cố định khi cuộn */
     right: 0;
@@ -72,27 +74,30 @@ body {
     /* Màu nền */
     color: #fff;
     /* Màu chữ */
-    padding: 20px;
+    padding: 10px;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
 
     overflow-x: hidden;
-    padding: 8px 0;
+    padding: 6px 0;
 }
 
 .sidenav a {
-    padding: 6px 8px 6px 16px;
+    padding: 4px 5px 4px 10px;
     text-decoration: none;
-    font-size: 25px;
+    font-size: 18px;
     color: #2196F3;
     display: block;
-    font-size: 25px;
     font-family: 'Times New Roman', Times, serif;
 }
 
 .sidenav a:hover {
     color: #064579;
+    transform: scale(1.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
 }
+
 
 .main {
     margin-left: 140px;
@@ -111,3 +116,56 @@ body {
         font-size: 18px;
     }
 }
+.button-main .highlight{
+    background-color: #2196F3;
+    color: white;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s;
+    transform: scale(1.02);
+    box-shadow: 0 6px 12px rgb(207, 207, 208);
+    
+}
+
+
+        /* Bắt đầu css cho btn */
+        .active {
+            display: block;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+
+        .button-main a {
+            text-decoration: none;
+            border-radius: 8px;
+            background-color: rgb(228, 228, 228);
+            outline: none;
+            border: none;
+            padding: 8px;
+            font-size: 12px;
+            cursor: pointer;
+            color: #2196F3;
+        }
+
+        .button-main {
+            padding-top: 2%;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            display: flex;
+            gap: 10px;
+            /* Khoảng cách giữa các nút */
+        }
+
+        .button-main a:active {
+            background-color: #3e8e41;
+        }
+
+        .button-main a:hover {
+            background-color: #2196F3;
+            color: white;
+            transition: background-color 0.3s, color 0.3s, transform 0.3s;
+            transform: scale(1.1);
+            box-shadow: 0 6px 12px rgb(207, 207, 208);
+        }

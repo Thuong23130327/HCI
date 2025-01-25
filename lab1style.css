@@ -153,6 +153,7 @@ h1 {
     font-size: 28px;
     cursor: pointer;
 }
+
 /* Existing styles */
 body {
     font-family: Arial, sans-serif;
@@ -170,7 +171,8 @@ body {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-h1, h2 {
+h1,
+h2 {
     text-align: center;
     color: #333;
 }
@@ -211,7 +213,8 @@ h1, h2 {
     display: flex;
     flex-direction: column;
     gap: 8px;
-    padding-top: 35px; /* Added padding to avoid overlap */
+    padding-top: 35px;
+    /* Added padding to avoid overlap */
 }
 
 /* New styles for checkbox */
@@ -235,4 +238,10 @@ h1, h2 {
     color: white;
 }
 
-
+.button-main .highlight {
+    background-color: #2196F3;
+    color: white;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s;
+    transform: scale(1.02);
+    box-shadow: 0 6px 12px rgb(207, 207, 208);
+}

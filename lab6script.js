@@ -1,43 +1,42 @@
-function showDiv(divId) {
-    const divs = ['Requi', 'Des', 'container'];
-    divs.forEach(id => {
-        document.getElementById(id).style.display = id === divId ? 'block' : 'none';
+
+function showDiv(divId, button) {
+    // Ẩn tất cả các div có id
+    var divs = document.querySelectorAll('div[id]');
+    divs.forEach(function(div) {
+        div.classList.add('hidden');
+        div.classList.remove('visible');
     });
-    if (divId === 'container') {
-        document.getElementById('main').style.display = 'block';
-        document.querySelector('header').style.display = 'block';
-    } else {
-        document.getElementById('main').style.display = 'none';
+    
+    // Hiển thị div được chọn
+    var divToShow = document.getElementById(divId);
+    divToShow.classList.add('visible');
+    divToShow.classList.remove('hidden');
+
+    // Hiển thị 'container-content' mặc định khi div abc hiện ra
+    if (divId === 'abc') {
+        showInterface('container-content');
     }
+
+    // Loại bỏ lớp highlight từ tất cả các nút
+    var buttons = document.querySelectorAll('button');
+    buttons.forEach(function(btn) {
+        btn.classList.remove('highlight');
+    });
+    
+    // Thêm lớp highlight vào nút được nhấn
+    button.classList.add('highlight');
 }
 
 function showInterface(interfaceId) {
-    const interfaces = ['web-interface', 'app-interface'];
-    interfaces.forEach(id => {
-        document.getElementById(id).style.display = 'none';
+    // Ẩn tất cả các div bên trong abc
+    var interfaces = document.querySelectorAll('#abc .interface');
+    interfaces.forEach(function(interface) {
+        interface.classList.add('hidden');
+        interface.classList.remove('visible');
     });
-    document.getElementById(interfaceId).style.display = 'block';
+
+    // Hiển thị giao diện được chọn
+    var interfaceToShow = document.getElementById(interfaceId);
+    interfaceToShow.classList.add('visible');
+    interfaceToShow.classList.remove('hidden');
 }
-
-
-// function showDiv(divId) {
-//     // Ẩn tất cả các div
-//     document.querySelectorAll('div[id]').forEach(div => {
-//         div.classList.remove('active');
-//         div.classList.add('hidden');
-//     });
-
-//     // Hiển thị div được chọn
-//     const activeDiv = document.getElementById(divId);
-//     if (activeDiv) {
-//         activeDiv.classList.remove('hidden');
-//         activeDiv.classList.add('active');
-//     }
-//     // Loại bỏ class active khỏi tất cả các nút
-//     document.querySelectorAll('.toggle-button').forEach(btn => {
-//         btn.classList.remove('active');
-//     });
-
-//     // Thêm class active vào nút được nhấn
-//     button.classList.add('active');
-// }

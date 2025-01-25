@@ -7,15 +7,28 @@
     <title>My Learning</title>
     <link rel="stylesheet" href="lab5style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <style>
+        .hidden {
+            display: none;
+        }
 
+        .visible {
+            display: block;
+        }
+
+        .highlight {
+            font-weight: bolder;
+            transform: scale(1.1);
+        }
+    </style>
 </head>
 
 <body>
 
     <div class="button-main">
-        <button class="btn-req" onclick="showDiv('Requi')">Requirement </button>
-        <button class="btn-des" onclick="showDiv('Des')">Design </button>
-        <button class="btn-imp" onclick="showDiv('container')">Implement </button>
+        <button class="btn-req highlight" onclick="showDiv('Requi', this)">Requirement</button>
+        <button class="btn-des" onclick="showDiv('Des', this)">Design</button>
+        <button class="btn-imp" onclick="showDiv('container', this)">Implement</button>
     </div>
 
     <!-- div cho imple -->
@@ -73,32 +86,28 @@
                     <p>⭐️ Leave a rating</p>
                 </div>
                 <div class="course-card">
-                    <img src="https://scontent.fsgn5-3.fna.fbcdn.net/v/t39.30808-1/309121358_459682656186698_5859314364442846345_n.png?stp=dst-png_s200x200&_nc_cat=104&ccb=1-7&_nc_sid=f4b9fd&_nc_ohc=Nk667GU59W4Q7kNvgHliEJV&_nc_zt=24&_nc_ht=scontent.fsgn5-3.fna&_nc_gid=A3BGbMcYWTonw9hrlrKwP1U&oh=00_AYCDaL5gP9hcm5L0BRhPxOT7etTeCTEAJsLMC2_Bz873-g&oe=672AA73E"
-                        alt="Course Image">
+                    <img src="images/lsam2.png" alt="">
                     <h3>MuleSoft 4.X Complete Guide For Beginners</h3>
                     <p>Instructor: Chinna Reddy</p>
                     <p>1% complete</p>
                     <p>⭐️⭐️⭐️⭐️⭐️ Leave a rating</p>
                 </div>
                 <div class="course-card">
-                    <img src=https://th.bing.com/th/id/OIP.P8UnwEfRg1K5M4eSmJCViwHaHa?w=156&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7
-                        alt="Course Image">
+                    <img src="images/lfpt.jpg" alt="">
                     <h3>English Vocabulary: 504 Essential Words</h3>
                     <p>Instructor: Mister Rabiey</p>
                     <p>15% complete</p>
                     <p>⭐️⭐️⭐️ Your rating</p>
                 </div>
                 <div class="course-card">
-                    <img src="https://th.bing.com/th/id/OIP.TkzwkXBq6hqS29ZSYXcrvAHaEK?w=277&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7"
-                        alt="Course Image">
+                    <img src="images/lsw.jpg" alt="">
                     <h3>Build a Backend REST API with Python & Django</h3>
                     <p>Instructor: Justin Mitchel</p>
                     <p>70% complete</p>
                     <p>⭐️⭐️⭐️⭐️ Leave a rating</p>
                 </div>
                 <div class="course-card">
-                    <img src=https://th.bing.com/th/id/OIP.P8UnwEfRg1K5M4eSmJCViwHaHa?w=156&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7
-                        alt="Course Image">
+                    <img src="images/lgo.jpg" alt="">
                     <h3>Java Certification (1Z0-819) Topic-wise Tests</h3>
                     <p>Instructor: Learn The Part Inc.</p>
                     <p>40% complete</p>
@@ -197,14 +206,14 @@
             </div>
 
             <div class="archive-card">
-                <img src="images/lfpt.jpg" alt="CSR Course Image">
+                <img src="images/lsam.png" alt="CSR Course Image">
                 <div class="archive-info">
-                    <h2>FPT_Corporate Social Responsibility Training 2024</h2>
+                    <h2>SAMSUNG_Android Phone and Tablet Essential Training 2020</h2>
                     <p>FSOT Content Development</p>
                     <div class="progress1">
                         <span>100% complete</span>
                         <div class="rating">
-                            <span>★★★★☆</span>
+                            <span>★★★☆☆</span>
                             <span>Your rating</span>
                         </div>
                     </div>
@@ -255,7 +264,7 @@
         </div>
     </div>
 
-    <div class="hidden" id="Requi">
+    <div class="active" id="Requi">
         <div class="cards">
             <p id="cardText">Nhóm 2: yêu cầu Req3, 4, 5</p>
             <br>
@@ -273,7 +282,7 @@
         <a href="#lab2" onclick="window.location.href='lab2.html'">Lab 2</a>
         <a href="#lab3" onclick="window.location.href='lab3.html'">Lab 3</a>
         <a href="#lab4" onclick="window.location.href='lab4.html'">Lab 4</a>
-        <a href="#lab5" onclick="window.location.href='lab5.html'">Lab 5</a>
+        <a href="#lab5" class="highlight" onclick="window.location.href='lab5.html'">Lab 5</a>
         <a href="#lab6" onclick="window.location.href='lab6.html'">Lab 6</a>
         <a href="#home" onclick="window.location.href='index.html'">Home</a>
     </div>
