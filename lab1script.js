@@ -71,25 +71,14 @@ document.addEventListener("DOMContentLoaded", () => {
         courseCardsContainer.innerHTML = "";
     });
 });
-
 function showDiv(divId) {
-    // Ẩn tất cả các div
-    document.querySelectorAll('div[id]').forEach(div => {
-        div.classList.remove('active');
+    var divs = document.querySelectorAll('div');
+    divs.forEach(function(div) {
         div.classList.add('hidden');
+        div.classList.remove('visible');
     });
-
-    // Hiển thị div được chọn
-    const activeDiv = document.getElementById(divId);
-    if (activeDiv) {
-        activeDiv.classList.remove('hidden');
-        activeDiv.classList.add('active');
-    }
-    // Loại bỏ class active khỏi tất cả các nút
-    document.querySelectorAll('.toggle-button').forEach(btn => {
-        btn.classList.remove('active');
-    });
-
-    // Thêm class active vào nút được nhấn
-    button.classList.add('active');
+    
+    var divToShow = document.getElementById(divId);
+    divToShow.classList.add('visible');
+    divToShow.classList.remove('hidden');
 }

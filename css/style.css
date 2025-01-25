@@ -1127,3 +1127,7 @@ img {
   font-size: 15px;
   color: #1c201f;
 }
+
+.visible {
+  display: block;
+}
