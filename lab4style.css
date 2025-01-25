@@ -343,25 +343,21 @@ main {
 }
 
 .image-container {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
     gap: 20px;
-    margin: 20px 0;
-}
-
-.image-box {
-    text-align: center;
-}
-
-.image-box img {
+  }
+  
+  .image-box img {
     width: 100%;
-    height: 100%;
-    max-width: 500px;
-    max-height: 300px;
-    object-fit: cover;
-    display: block;
-    margin: 0 auto 10px;
-}
+    height: auto;
+    max-width: 100%;
+    object-fit: contain;
+  }
+  
+  .image-box {
+    text-align: center;
+  }
 
 .download-button {
     display: inline-block;

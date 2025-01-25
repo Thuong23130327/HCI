@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning & Training Goals</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container {
+            display: flex;
+            padding: 20px;
+        }
+        .left {
+            flex: 1;
+            margin-right: 20px;
+        }
+        .right {
+            flex: 1;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .card {
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        .card-header {
+            display: flex;
+            align-items: center;
+        }
+        .card img {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+        }
+        .card h2 {
+            font-size: 1.5rem;
+            margin: 0;
+            font-weight: bold;
+            color: black;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .card p {
+            font-size: 1rem;
+            margin: 0;
+            padding: 10px;
+            color: #333;
+        }
+        .first-card {
+            border: 1px solid rgb(240, 0, 240);
+            border-left: 4px solid rgb(240, 0, 240);
+        }
+        .header {
+            background-color: #e0e0e0;
+            text-align: center;
+            padding: 10px;
+            border-radius: 5px 5px 0 0;
+        }
+        .score-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 10px;
+        }
+        .score-container .score {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        .score-container .question {
+            font-size: 1rem;
+            color: #8a2be2;
+            text-decoration: underline;
+        }
+        .assessment img {
+            display: block;
+            margin: 10px auto;
+            width: 80%;
+            height: auto;
+        }
+        .assessment p {
+            text-align: center;
+        }
+        .assessment h3 {
+            margin-top: 0;
+        }
+        .answers-title {
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        .review-options {
+            margin-top: 5px;
+        }
+        .buttons {
+            
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+    
+        .buttons button {
+            background-color: white;
+            padding: 10px;
+            border: 2px solid black;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .divs-container {
+            margin-top: 20px;
+        }
+        .div-item {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        .div-item input[type="checkbox"] {
+            margin-right: 10px;
+        }
+        .div-item h4 {
+            margin: 0;
+            font-weight: bold;
+        }
+        .div-item p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left">
+            <div class="card first-card">
+                <div class="card-header">
+                    <img src="images/i1.png" alt="i1">
+                    <h2>Hands-on training</h2>
+                </div>
+                <p>Upskill effectively with AI-powered coding exercises, practice tests, and quizzes.</p>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <img src="images/i2.png" alt="i2">
+                    <h2>Certification prep</h2>
+                </div>
+                <p>Prep for industry-recognized certifications by solving real-world challenges and earn badges along the way.</p>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <img src="images/i3.png" alt="i3">
+                    <h2>Insights and analytics (Enterprise Plan)</h2>
+                </div>
+                <p>Fast-track goals with advanced insights plus a dedicated customer success team to help drive effective learning.</p>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <img src="images/i4.png" alt="i4">
+                    <h2>Customizable content (Enterprise Plan)</h2>
+                </div>
+                <p>Create tailored learning paths for team and organization goals and even host your own content and resources.</p>
+            </div>
+        </div>
+        <div class="right">
+            <div class="header">
+                <h3>Containerization</h3>
+            </div>
+            <div class="score-container">
+                <span class="score">Your Score: 159</span>
+                <span class="question">What do these scores mean?</span>
+            </div>
+            <img src="images/i5.png" alt="Performance Image">
+            <div class="assessment">
+                <h3 class="answers-title">Your Answers</h3>
+                <p class="review-options">Review your answers and see the correct options.</p>
+                <div class="buttons">
+                    <button>All Domains</button>
+                    <button>All Answers</button>
+                    <button id="correct">23 Correct</button>
+                    <button id="Incorrect">7 Incorrect</button>
+                    <button id="Skipped">0 Skipped</button>
+                </div>
+                <div class="divs-container">
+                    <div class="div-item">
+                        <input type="checkbox">
+                        <div>
+                            <h4>Question 1</h4>
+                            <p>Which of the following scenarios will benefit most from a managed Kubernetes service?</p>
+                        </div>
+                    </div>
+                    <div class="div-item">
+                        <input type="checkbox">
+                        <div>
+                            <h4>Question 2</h4>
+                            <p>You containerized a web application, and one of the containers is running the database engine. Which of the following strategies is the best to persist the data?</p>
+                        </div>
+                    </div>
+                    <!-- Thêm các div-item khác tại đây -->
+                </div>
+                <h3>Performance Assessment</h3>
+                <div class="performance">
+                    <p>Category: Superior (100-200)</p>
+                    <p>Performance better than 88% of Udemy learners who completed this assessment.</p>
+                </div>
+                <h4>Answers</h4>
+                <p>Correct: 23</p>
+                <p>Incorrect: 7</p>
+                <p>Skipped: 0</p>
+                <h4>Example Questions</h4>
+                <p>1. Which of the following scenarios will benefit most from a managed Kubernetes service, such as AWS EKS or Google Cloud's GKE? (Correct)</p>
+                <p>2. You containerized a web application, and one of the containers is running the database engine. Which of the following strategies is the best to persist the data? (Correct)</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
